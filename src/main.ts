@@ -1,4 +1,5 @@
 import { ValidationPipe } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import {
   FastifyAdapter,
@@ -15,9 +16,11 @@ async function bootstrap() {
   );
   // app.useGlobalFilters(new ExceptionsFilter());
   app.enableCors({
-    origin: ['http://localhost:3000', 'https://crislabs.vercel.app'],
+    origin: ['http://localhost:3000', 'https://crislabs.vercel.app', 'https://jesuscalamani92.vercel.app', 'https://jjcalamani92.vercel.app'],
   });
   app.useGlobalPipes(new ValidationPipe());
-  await app.listen(6002);
+  const configService = app.get(ConfigService);
+  const port = configService.get<string>('PORT');
+  await app.listen(port);
 }
 bootstrap();
