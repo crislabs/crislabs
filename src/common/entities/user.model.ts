@@ -46,3 +46,5 @@ export class MarketingUser extends User {}
 export class PetUser extends User {}
 @ObjectType()
 export class PortfolioUser extends User {}
+@ObjectType()
+export class HardwareStoreUser extends User {}

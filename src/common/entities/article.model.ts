@@ -49,3 +49,7 @@ export class ListPetArticle extends RelayTypes<PetArticle>(PetArticle) {}
 export class PortfolioArticle extends Article {}
 @ObjectType()
 export class ListPortfolioArticle extends RelayTypes<PortfolioArticle>(PortfolioArticle) {}
+@ObjectType()
+export class HardwareStoreArticle extends Article {}
+@ObjectType()
+export class ListHardwareStoreArticle extends RelayTypes<HardwareStoreArticle>(HardwareStoreArticle) {}

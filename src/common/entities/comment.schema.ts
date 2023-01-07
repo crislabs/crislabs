@@ -13,3 +13,4 @@ export class CommentDocument extends AbstractDocument {
 }
 export const PetCommentSchema = SchemaFactory.createForClass(CommentDocument);
 export const PortfolioCommentSchema = SchemaFactory.createForClass(CommentDocument);
+export const HardwareStoreCommentSchema = SchemaFactory.createForClass(CommentDocument);

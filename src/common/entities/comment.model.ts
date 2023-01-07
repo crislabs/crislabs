@@ -48,3 +48,7 @@ export class ListPetComment extends RelayTypes<PetComment>(PetComment) {}
 export class PortfolioComment extends Comment {}
 @ObjectType()
 export class ListPortfolioComment extends RelayTypes<PortfolioComment>(PortfolioComment) {}
+@ObjectType()
+export class HardwareStoreComment extends Comment {}
+@ObjectType()
+export class ListHardwareStoreComment extends RelayTypes<HardwareStoreComment>(HardwareStoreComment) {}

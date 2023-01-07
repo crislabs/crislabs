@@ -135,6 +135,10 @@ export class Type {
   export class HardwareStoreSite extends Site {}
   
   @ObjectType()
+  export class ListHardwareStoreSite extends RelayTypes<HardwareStoreSite>(HardwareStoreSite) {}
+
+
+  @ObjectType()
   export class PetSite extends Site {}
   
   @ObjectType()

@@ -15,3 +15,4 @@ export class ArticleDocument extends AbstractDocument {
 }
 export const PetArticleSchema = SchemaFactory.createForClass(ArticleDocument);
 export const PortfolioArticleSchema = SchemaFactory.createForClass(ArticleDocument);
+export const HardwareStoreArticleSchema = SchemaFactory.createForClass(ArticleDocument);

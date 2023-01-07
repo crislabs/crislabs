@@ -6,6 +6,7 @@ import {
   NestFastifyApplication,
 } from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
+import { contentParser } from 'fastify-multer';
 // import { ExceptionsFilter } from './common/aspects/http-exception.filter';
 
 async function bootstrap() {
@@ -15,6 +16,7 @@ async function bootstrap() {
 
   );
   // app.useGlobalFilters(new ExceptionsFilter());
+  app.register(contentParser);
   app.enableCors({
     origin: ['http://localhost:3000', 'https://crislabs.vercel.app', 'https://jesuscalamani92.vercel.app', 'https://jjcalamani92.vercel.app'],
   });

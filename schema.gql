@@ -76,6 +76,38 @@ type Tags {
   slug: String!
 }
 
+type HardwareStoreSite {
+  _id: ID!
+  dataSite: DataSite!
+  url: String!
+  pages: [HardwareStorePage0]
+  users: [HardwareStoreUser]
+  products: [HardwareStoreProduct]
+  articles: [HardwareStoreArticle]
+}
+
+type ListHardwareStoreSite {
+  page: HardwareStoreSiteConnection!
+  pageData: PageData
+}
+
+type HardwareStoreSiteConnection {
+  edges: [HardwareStoreSiteEdge!]
+  pageInfo: HardwareStoreSitePageInfo
+}
+
+type HardwareStoreSiteEdge {
+  cursor: String
+  node: HardwareStoreSite
+}
+
+type HardwareStoreSitePageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
 type PetSite {
   _id: ID!
   dataSite: DataSite!
@@ -161,6 +193,13 @@ type PortfolioComment {
   parentId: String!
 }
 
+type HardwareStoreComment {
+  _id: ID!
+  dataComment: DataComment!
+  siteId: String!
+  parentId: String!
+}
+
 type DataArticle {
   content: String
   category: String
@@ -235,6 +274,37 @@ type PortfolioArticlePageInfo {
   hasNextPage: Boolean!
 }
 
+type HardwareStoreArticle {
+  _id: ID!
+  dataArticle: DataArticle!
+  siteId: String!
+  parentId: String!
+  slug: String!
+  comments: [HardwareStoreComment]
+}
+
+type ListHardwareStoreArticle {
+  page: HardwareStoreArticleConnection!
+  pageData: PageData
+}
+
+type HardwareStoreArticleConnection {
+  edges: [HardwareStoreArticleEdge!]
+  pageInfo: HardwareStoreArticlePageInfo
+}
+
+type HardwareStoreArticleEdge {
+  cursor: String
+  node: HardwareStoreArticle
+}
+
+type HardwareStoreArticlePageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
 type DataPage {
   type: String!
   icon: String
@@ -247,6 +317,136 @@ type ComponentPage {
   uid: String!
   component: String!
   html: String!
+}
+
+type HardwareStorePage0 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  pages: [HardwareStorePage1]
+  products: [HardwareStoreProduct]
+  articles: [HardwareStoreArticle]
+}
+
+type HardwareStorePage1 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage2]
+}
+
+type HardwareStorePage2 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage3]
+}
+
+type HardwareStorePage3 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage4]
+}
+
+type HardwareStorePage4 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage5]
+}
+
+type HardwareStorePage5 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage6]
+}
+
+type HardwareStorePage6 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage7]
+}
+
+type HardwareStorePage7 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage8]
+}
+
+type HardwareStorePage8 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage9]
+}
+
+type HardwareStorePage9 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage10]
+}
+
+type HardwareStorePage10 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage11]
+}
+
+type HardwareStorePage11 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
+  pages: [HardwareStorePage12]
+}
+
+type HardwareStorePage12 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [HardwareStoreProduct]
 }
 
 type PetPage0 {
@@ -1068,6 +1268,292 @@ type PortfolioPage12PageInfo {
   hasNextPage: Boolean!
 }
 
+type ListHardwareStorePage0 {
+  page: HardwareStorePage0Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage0Connection {
+  edges: [HardwareStorePage0Edge!]
+  pageInfo: HardwareStorePage0PageInfo
+}
+
+type HardwareStorePage0Edge {
+  cursor: String
+  node: HardwareStorePage0
+}
+
+type HardwareStorePage0PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage1 {
+  page: HardwareStorePage1Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage1Connection {
+  edges: [HardwareStorePage1Edge!]
+  pageInfo: HardwareStorePage1PageInfo
+}
+
+type HardwareStorePage1Edge {
+  cursor: String
+  node: HardwareStorePage1
+}
+
+type HardwareStorePage1PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage2 {
+  page: HardwareStorePage2Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage2Connection {
+  edges: [HardwareStorePage2Edge!]
+  pageInfo: HardwareStorePage2PageInfo
+}
+
+type HardwareStorePage2Edge {
+  cursor: String
+  node: HardwareStorePage2
+}
+
+type HardwareStorePage2PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage3 {
+  page: HardwareStorePage3Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage3Connection {
+  edges: [HardwareStorePage3Edge!]
+  pageInfo: HardwareStorePage3PageInfo
+}
+
+type HardwareStorePage3Edge {
+  cursor: String
+  node: HardwareStorePage3
+}
+
+type HardwareStorePage3PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage4 {
+  page: HardwareStorePage4Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage4Connection {
+  edges: [HardwareStorePage4Edge!]
+  pageInfo: HardwareStorePage4PageInfo
+}
+
+type HardwareStorePage4Edge {
+  cursor: String
+  node: HardwareStorePage4
+}
+
+type HardwareStorePage4PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage5 {
+  page: HardwareStorePage5Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage5Connection {
+  edges: [HardwareStorePage5Edge!]
+  pageInfo: HardwareStorePage5PageInfo
+}
+
+type HardwareStorePage5Edge {
+  cursor: String
+  node: HardwareStorePage5
+}
+
+type HardwareStorePage5PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage6 {
+  page: HardwareStorePage6Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage6Connection {
+  edges: [HardwareStorePage6Edge!]
+  pageInfo: HardwareStorePage6PageInfo
+}
+
+type HardwareStorePage6Edge {
+  cursor: String
+  node: HardwareStorePage6
+}
+
+type HardwareStorePage6PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage7 {
+  page: HardwareStorePage7Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage7Connection {
+  edges: [HardwareStorePage7Edge!]
+  pageInfo: HardwareStorePage7PageInfo
+}
+
+type HardwareStorePage7Edge {
+  cursor: String
+  node: HardwareStorePage7
+}
+
+type HardwareStorePage7PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage8 {
+  page: HardwareStorePage8Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage8Connection {
+  edges: [HardwareStorePage8Edge!]
+  pageInfo: HardwareStorePage8PageInfo
+}
+
+type HardwareStorePage8Edge {
+  cursor: String
+  node: HardwareStorePage8
+}
+
+type HardwareStorePage8PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage9 {
+  page: HardwareStorePage9Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage9Connection {
+  edges: [HardwareStorePage9Edge!]
+  pageInfo: HardwareStorePage9PageInfo
+}
+
+type HardwareStorePage9Edge {
+  cursor: String
+  node: HardwareStorePage9
+}
+
+type HardwareStorePage9PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage10 {
+  page: HardwareStorePage10Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage10Connection {
+  edges: [HardwareStorePage10Edge!]
+  pageInfo: HardwareStorePage10PageInfo
+}
+
+type HardwareStorePage10Edge {
+  cursor: String
+  node: HardwareStorePage10
+}
+
+type HardwareStorePage10PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage11 {
+  page: HardwareStorePage11Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage11Connection {
+  edges: [HardwareStorePage11Edge!]
+  pageInfo: HardwareStorePage11PageInfo
+}
+
+type HardwareStorePage11Edge {
+  cursor: String
+  node: HardwareStorePage11
+}
+
+type HardwareStorePage11PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListHardwareStorePage12 {
+  page: HardwareStorePage12Connection!
+  pageData: PageData
+}
+
+type HardwareStorePage12Connection {
+  edges: [HardwareStorePage12Edge!]
+  pageInfo: HardwareStorePage12PageInfo
+}
+
+type HardwareStorePage12Edge {
+  cursor: String
+  node: HardwareStorePage12
+}
+
+type HardwareStorePage12PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
 type DataProduct {
   type: String!
   mark: Mark
@@ -1093,6 +1579,15 @@ type Mark {
 type Promotion {
   label: String!
   slug: String!
+}
+
+type HardwareStoreProduct {
+  _id: ID!
+  dataProduct: DataProduct!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  comments: [HardwareStoreComment]
 }
 
 type PetProduct {
@@ -1157,6 +1652,28 @@ type PetProductPageInfo {
   hasNextPage: Boolean!
 }
 
+type ListHardwareStoreProduct {
+  page: HardwareStoreProductConnection!
+  pageData: PageData
+}
+
+type HardwareStoreProductConnection {
+  edges: [HardwareStoreProductEdge!]
+  pageInfo: HardwareStoreProductPageInfo
+}
+
+type HardwareStoreProductEdge {
+  cursor: String
+  node: HardwareStoreProduct
+}
+
+type HardwareStoreProductPageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
 type DataUser {
   updateDate: UpdateDate!
   username: String!
@@ -1179,6 +1696,14 @@ type PetUser {
 }
 
 type PortfolioUser {
+  _id: ID!
+  dataUser: DataUser!
+  email: String!
+  password: String!
+  siteId: String!
+}
+
+type HardwareStoreUser {
   _id: ID!
   dataUser: DataUser!
   email: String!
@@ -1382,6 +1907,103 @@ type Query {
   portfolioGetArticlesWithCursorByParentId(args: ConnectionArgs!, parentId: String!): ListPortfolioArticle!
   portfolioGetArticlesWithCursorBySiteId(args: ConnectionArgs!, siteId: String!): ListPortfolioArticle!
   portfolioGetCommentsByParentId(parentId: String!): [PortfolioComment!]!
+  hardwareStoreGetSite(id: String!): HardwareStoreSite!
+  hardwareStoreGetSites: [HardwareStoreSite!]!
+  hardwareStoreGetSitesWithCursor(args: ConnectionArgs!): ListHardwareStoreSite!
+  hardwareStoreGetPage0(id: String!): HardwareStorePage0!
+  hardwareStoreGetPage0BySlug(slug: String!, siteId: String!): HardwareStorePage0!
+  hardwareStoreGetPages0: [HardwareStorePage0!]!
+  hardwareStoreGetPages0ByParentId(parentId: String!): [HardwareStorePage0!]!
+  hardwareStoreGetPages0BySiteId(siteId: String!): [HardwareStorePage0!]!
+  hardwareStoreGetPages0WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage0!
+  hardwareStoreGetPage1(id: String!): HardwareStorePage1!
+  hardwareStoreGetPage1BySlug(slug: String!, siteId: String!): HardwareStorePage1!
+  hardwareStoreGetPages1: [HardwareStorePage1!]!
+  hardwareStoreGetPages1BySiteId(siteId: String!): [HardwareStorePage1!]!
+  hardwareStoreGetPages1ByParentId(parentId: String!): [HardwareStorePage1!]!
+  hardwareStoreGetPages1WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage1!
+  hardwareStoreGetPage2(id: String!): HardwareStorePage2!
+  hardwareStoreGetPage2BySlug(slug: String!, siteId: String!): HardwareStorePage2!
+  hardwareStoreGetPages2: [HardwareStorePage2!]!
+  hardwareStoreGetPages2ByParentId(parentId: String!): [HardwareStorePage2!]!
+  hardwareStoreGetPages2BySiteId(siteId: String!): [HardwareStorePage2!]!
+  hardwareStoreGetPages2WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage2!
+  hardwareStoreGetPage3(id: String!): HardwareStorePage3!
+  hardwareStoreGetPage3BySlug(slug: String!, siteId: String!): HardwareStorePage3!
+  hardwareStoreGetPages3: [HardwareStorePage3!]!
+  hardwareStoreGetPages3ByParentId(parentId: String!): [HardwareStorePage3!]!
+  hardwareStoreGetPages3BySiteId(siteId: String!): [HardwareStorePage3!]!
+  hardwareStoreGetPages3WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage3!
+  hardwareStoreGetPage4(id: String!): HardwareStorePage4!
+  hardwareStoreGetPage4BySlug(slug: String!, siteId: String!): HardwareStorePage4!
+  hardwareStoreGetPages4: [HardwareStorePage4!]!
+  hardwareStoreGetPages4ByParentId(parentId: String!): [HardwareStorePage4!]!
+  hardwareStoreGetPages4BySiteId(siteId: String!): [HardwareStorePage4!]!
+  hardwareStoreGetPages4WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage4!
+  hardwareStoreGetPage5(id: String!): HardwareStorePage5!
+  hardwareStoreGetPage5BySlug(slug: String!, siteId: String!): HardwareStorePage5!
+  hardwareStoreGetPages5: [HardwareStorePage5!]!
+  hardwareStoreGetPages5ByParentId(parentId: String!): [HardwareStorePage5!]!
+  hardwareStoreGetPages5BySiteId(siteId: String!): [HardwareStorePage5!]!
+  hardwareStoreGetPages5WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage5!
+  hardwareStoreGetPage6(id: String!): HardwareStorePage6!
+  hardwareStoreGetPage6BySlug(slug: String!, siteId: String!): HardwareStorePage6!
+  hardwareStoreGetPages6: [HardwareStorePage6!]!
+  hardwareStoreGetPages6ByParentId(parentId: String!): [HardwareStorePage6!]!
+  hardwareStoreGetPages6BySiteId(siteId: String!): [HardwareStorePage6!]!
+  hardwareStoreGetPages6WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage6!
+  hardwareStoreGetPage7(id: String!): HardwareStorePage7!
+  hardwareStoreGetPage7BySlug(slug: String!, siteId: String!): HardwareStorePage7!
+  hardwareStoreGetPages7: [HardwareStorePage7!]!
+  hardwareStoreGetPages7ByParentId(parentId: String!): [HardwareStorePage7!]!
+  hardwareStoreGetPages7BySiteId(siteId: String!): [HardwareStorePage7!]!
+  hardwareStoreGetPages7WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage7!
+  hardwareStoreGetPage8(id: String!): HardwareStorePage8!
+  hardwareStoreGetPage8BySlug(slug: String!, siteId: String!): HardwareStorePage8!
+  hardwareStoreGetPages8: [HardwareStorePage8!]!
+  hardwareStoreGetPages8ByParentId(parentId: String!): [HardwareStorePage8!]!
+  hardwareStoreGetPages8BySiteId(siteId: String!): [HardwareStorePage8!]!
+  hardwareStoreGetPages8WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage8!
+  hardwareStoreGetPage9(id: String!): HardwareStorePage9!
+  hardwareStoreGetPage9BySlug(slug: String!, siteId: String!): HardwareStorePage9!
+  hardwareStoreGetPages9: [HardwareStorePage9!]!
+  hardwareStoreGetPages9ByParentId(parentId: String!): [HardwareStorePage9!]!
+  hardwareStoreGetPages9BySiteId(siteId: String!): [HardwareStorePage9!]!
+  hardwareStoreGetPages9WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage9!
+  hardwareStoreGetPage10(id: String!): HardwareStorePage10!
+  hardwareStoreGetPage10BySlug(slug: String!, siteId: String!): HardwareStorePage10!
+  hardwareStoreGetPages10: [HardwareStorePage10!]!
+  hardwareStoreGetPages10ByParentId(parentId: String!): [HardwareStorePage10!]!
+  hardwareStoreGetPages10BySiteId(siteId: String!): [HardwareStorePage10!]!
+  hardwareStoreGetPages10WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage10!
+  hardwareStoreGetPage11(id: String!): HardwareStorePage11!
+  hardwareStoreGetPage11BySlug(slug: String!, siteId: String!): HardwareStorePage11!
+  hardwareStoreGetPages11: [HardwareStorePage11!]!
+  hardwareStoreGetPages11ByParentId(parentId: String!): [HardwareStorePage11!]!
+  hardwareStoreGetPages11BySiteId(siteId: String!): [HardwareStorePage11!]!
+  hardwareStoreGetPages11WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage11!
+  hardwareStoreGetPage12(id: String!): HardwareStorePage12!
+  hardwareStoreGetPage12BySlug(slug: String!, siteId: String!): HardwareStorePage12!
+  hardwareStoreGetPages12: [HardwareStorePage12!]!
+  hardwareStoreGetPages12ByParentId(parentId: String!): [HardwareStorePage12!]!
+  hardwareStoreGetPages12BySiteId(siteId: String!): [HardwareStorePage12!]!
+  hardwareStoreGetPages12WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage12!
+  hardwareStoreGetProduct(id: String!): HardwareStoreProduct!
+  hardwareStoreGetProductBySlug(slug: String!, siteId: String!): HardwareStoreProduct!
+  hardwareStoreGetProducts: [HardwareStoreProduct!]!
+  hardwareStoreGetProductsBySiteId(siteId: String!): [HardwareStoreProduct!]!
+  hardwareStoreGetProductsByParentId(parentId: String!): [HardwareStoreProduct!]!
+  hardwareStoreGetProductsWithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStoreProduct!
+  hardwareStoreGetCommentsByParentId(parentId: String!): [HardwareStoreComment!]!
+  hardwareStoreGetArticle(id: String!): HardwareStoreArticle!
+  hardwareStoreGetArticleBySlug(siteId: String!, slug: String!): HardwareStoreArticle!
+  hardwareStoreGetArticles: [HardwareStoreArticle!]!
+  hardwareStoreGetArticlesByParentId(parentId: String!): [HardwareStoreArticle!]!
+  hardwareStoreGetArticlesBySiteId(siteId: String!): [HardwareStoreArticle!]!
+  hardwareStoreGetArticlesWithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStoreArticle!
+  hardwareStoreGetUser(id: String!): HardwareStoreUser!
+  hardwareStoreGetUserByEmail(email: String!, siteId: String!): HardwareStoreUser!
+  hardwareStoreGetUsers: [HardwareStoreUser!]!
 }
 
 input ConnectionArgs {
@@ -1624,6 +2246,119 @@ type Mutation {
   portfolioUpdateComment(input: UpdateComment!): PortfolioComment!
   portfolioUpdateLikesComment(input: UpdateLikesComment!): PortfolioComment!
   portfolioUpdateDisLikesComment(input: UpdateLikesComment!): PortfolioComment!
+  hardwareStoreCreateSite(input: CreateSite!): HardwareStoreSite!
+  hardwareStoreUpdateSite(input: UpdateSite!): HardwareStoreSite!
+  hardwareStoreUpdateDbSite(input: UpdateDB!): HardwareStoreSite!
+  hardwareStoreUpdateAdminSite(input: UpdateAdminSite!): HardwareStoreSite!
+  hardwareStoreUpdateImageSite(input: UpdateImage!): HardwareStoreSite!
+  hardwareStoreDeleteSite(id: String!): String!
+  hardwareStoreDeleteSites(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllSites: String!
+  hardwareStoreCreatePage0(input: CreatePage!): HardwareStorePage0!
+  hardwareStoreUpdatePage0(input: UpdatePage!): HardwareStorePage0!
+  hardwareStoreUpdateImagePage0(input: UpdateImage!): HardwareStorePage0!
+  hardwareStoreDeletePage0(id: String!): String!
+  hardwareStoreDeletePages0(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages0: String!
+  hardwareStoreCreatePage1(input: CreatePage!): HardwareStorePage1!
+  hardwareStoreUpdatePage1(input: UpdatePage!): HardwareStorePage1!
+  hardwareStoreUpdateImagePage1(input: UpdateImage!): HardwareStorePage1!
+  hardwareStoreDeletePage1(id: String!): String!
+  hardwareStoreDeletePages1(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages1: String!
+  hardwareStoreCreatePage2(input: CreatePage!): HardwareStorePage2!
+  hardwareStoreUpdatePage2(input: UpdatePage!): HardwareStorePage2!
+  hardwareStoreUpdateImagePage2(input: UpdateImage!): HardwareStorePage2!
+  hardwareStoreDeletePage2(id: String!): String!
+  hardwareStoreDeletePages2(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages2: String!
+  hardwareStoreCreatePage3(input: CreatePage!): HardwareStorePage3!
+  hardwareStoreUpdatePage3(input: UpdatePage!): HardwareStorePage3!
+  hardwareStoreUpdateImagePage3(input: UpdateImage!): HardwareStorePage3!
+  hardwareStoreDeletePage3(id: String!): String!
+  hardwareStoreDeletePages3(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages3: String!
+  hardwareStoreCreatePage4(input: CreatePage!): HardwareStorePage4!
+  hardwareStoreUpdatePage4(input: UpdatePage!): HardwareStorePage4!
+  hardwareStoreUpdateImagePage4(input: UpdateImage!): HardwareStorePage4!
+  hardwareStoreDeletePage4(id: String!): String!
+  hardwareStoreDeletePages4(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages4: String!
+  hardwareStoreCreatePage5(input: CreatePage!): HardwareStorePage5!
+  hardwareStoreUpdatePage5(input: UpdatePage!): HardwareStorePage5!
+  hardwareStoreUpdateImagePage5(input: UpdateImage!): HardwareStorePage5!
+  hardwareStoreDeletePage5(id: String!): String!
+  hardwareStoreDeletePages5(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages5: String!
+  hardwareStoreCreatePage6(input: CreatePage!): HardwareStorePage6!
+  hardwareStoreUpdatePage6(input: UpdatePage!): HardwareStorePage6!
+  hardwareStoreUpdateImagePage6(input: UpdateImage!): HardwareStorePage6!
+  hardwareStoreDeletePage6(id: String!): String!
+  hardwareStoreDeletePages6(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages6: String!
+  hardwareStoreCreatePage7(input: CreatePage!): HardwareStorePage7!
+  hardwareStoreUpdatePage7(input: UpdatePage!): HardwareStorePage7!
+  hardwareStoreUpdateImagePage7(input: UpdateImage!): HardwareStorePage7!
+  hardwareStoreDeletePage7(id: String!): String!
+  hardwareStoreDeletePages7(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages7: String!
+  hardwareStoreCreatePage8(input: CreatePage!): HardwareStorePage8!
+  hardwareStoreUpdatePage8(input: UpdatePage!): HardwareStorePage8!
+  hardwareStoreUpdateImagePage8(input: UpdateImage!): HardwareStorePage8!
+  hardwareStoreDeletePage8(id: String!): String!
+  hardwareStoreDeletePages8(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages8: String!
+  hardwareStoreCreatePage9(input: CreatePage!): HardwareStorePage9!
+  hardwareStoreUpdatePage9(input: UpdatePage!): HardwareStorePage9!
+  hardwareStoreUpdateImagePage9(input: UpdateImage!): HardwareStorePage9!
+  hardwareStoreDeletePage9(id: String!): String!
+  hardwareStoreDeletePages9(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages9: String!
+  hardwareStoreCreatePage10(input: CreatePage!): HardwareStorePage10!
+  hardwareStoreUpdatePage10(input: UpdatePage!): HardwareStorePage10!
+  hardwareStoreUpdateImagePage10(input: UpdateImage!): HardwareStorePage10!
+  hardwareStoreDeletePage10(id: String!): String!
+  hardwareStoreDeletePages10(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages10: String!
+  hardwareStoreCreatePage11(input: CreatePage!): HardwareStorePage11!
+  hardwareStoreUpdatePage11(input: UpdatePage!): HardwareStorePage11!
+  hardwareStoreUpdateImagePage11(input: UpdateImage!): HardwareStorePage11!
+  hardwareStoreDeletePage11(id: String!): String!
+  hardwareStoreDeletePages11(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages11: String!
+  hardwareStoreCreatePage12(input: CreatePage!): HardwareStorePage12!
+  hardwareStoreUpdatePage12(input: UpdatePage!): HardwareStorePage12!
+  hardwareStoreUpdateImagePage12(input: UpdateImage!): HardwareStorePage12!
+  hardwareStoreDeletePage12(id: String!): String!
+  hardwareStoreDeletePages12(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllPages12: String!
+  hardwareStoreCreateProduct(input: CreateProduct!): HardwareStoreProduct!
+  hardwareStoreUpdateProduct(input: UpdateProduct!): HardwareStoreProduct!
+  hardwareStoreUpdateDetailProduct(input: UpdateDetailProduct!): HardwareStoreProduct!
+  hardwareStoreUpdatePriceProduct(input: UpdatePriceProduct!): HardwareStoreProduct!
+  hardwareStoreUpdateSpecsProduct(input: UpdateSpecsProduct!): HardwareStoreProduct!
+  hardwareStoreUpdateTagsProduct(input: UpdateTagsProduct!): HardwareStoreProduct!
+  hardwareStoreUpdateLikesProduct(input: UpdateLikesProduct!): HardwareStoreProduct!
+  hardwareStoreUpdateDisLikesProduct(input: UpdateLikesProduct!): HardwareStoreProduct!
+  hardwareStoreUpdateImageProduct(input: UpdateImageProduct!): HardwareStoreProduct!
+  hardwareStoreDeleteProduct(id: String!): String!
+  hardwareStoreDeleteProducts(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllProducts: String!
+  hardwareStoreCreateComment(input: CreateComment!): HardwareStoreComment!
+  hardwareStoreUpdateComment(input: UpdateComment!): HardwareStoreComment!
+  hardwareStoreUpdateLikesComment(input: UpdateLikesComment!): HardwareStoreComment!
+  hardwareStoreUpdateDisLikesComment(input: UpdateLikesComment!): HardwareStoreComment!
+  hardwareStoreCreateArticle(input: CreateArticle!): HardwareStoreArticle!
+  hardwareStoreUpdateArticle(input: UpdateArticle!): HardwareStoreArticle!
+  hardwareStoreUpdateContentArticle(input: UpdateContentArticle!): HardwareStoreArticle!
+  hardwareStoreUpdateTagsArticle(input: UpdateTagsArticle!): HardwareStoreArticle!
+  hardwareStoreUpdateLikesArticle(input: UpdateLikesArticle!): HardwareStoreArticle!
+  hardwareStoreUpdateDisLikesArticle(input: UpdateLikesArticle!): HardwareStoreArticle!
+  hardwareStoreUpdateImageArticle(input: UpdateImage!): HardwareStoreArticle!
+  hardwareStoreDeleteArticle(id: String!): String!
+  hardwareStoreDeleteArticles(ids: [String!]!): [String!]!
+  hardwareStoreDeleteAllArticles: String!
+  hardwareStoreCreateUser(input: CreateUser!): HardwareStoreUser!
 }
 
 input CreateSite {

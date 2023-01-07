@@ -72,7 +72,7 @@ export class Promotion extends Type {}
 
 
 @ObjectType()
-export class ToolProduct extends Product {}
+export class HardwareStoreProduct extends Product {}
 
 @ObjectType()
 export class PetProduct extends Product {}
@@ -86,3 +86,5 @@ export class PetAdoption extends Product {}
 export class ListPetAdoption extends RelayTypes<PetAdoption>(PetAdoption) {}
 @ObjectType()
 export class ListPetProduct extends RelayTypes<PetProduct>(PetProduct) {}
+@ObjectType()
+export class ListHardwareStoreProduct extends RelayTypes<HardwareStoreProduct>(HardwareStoreProduct) {}

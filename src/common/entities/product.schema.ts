@@ -35,7 +35,7 @@ export class ProductDocument extends AbstractDocument {
   @Prop({ trim: true })
   parentId: string;
 }
-export const ToolProductSchema = SchemaFactory.createForClass(ProductDocument);
+export const HardwareStoreProductSchema = SchemaFactory.createForClass(ProductDocument);
 
 export const PetProductSchema = SchemaFactory.createForClass(ProductDocument);
 export const PetAdoptionSchema = SchemaFactory.createForClass(ProductDocument);

@@ -69,6 +69,10 @@ export const HardwareStorePage9Schema =
   SchemaFactory.createForClass(PageDocument);
 export const HardwareStorePage10Schema =
   SchemaFactory.createForClass(PageDocument);
+export const HardwareStorePage11Schema =
+  SchemaFactory.createForClass(PageDocument);
+export const HardwareStorePage12Schema =
+  SchemaFactory.createForClass(PageDocument);
 
 export const PetPage0Schema = SchemaFactory.createForClass(PageDocument);
 export const PetPage1Schema = SchemaFactory.createForClass(PageDocument);

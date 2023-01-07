@@ -282,59 +282,59 @@ export class EducationPage11 extends Page {}
 @ObjectType()
 export class EducationPage12 extends Page {}
 
-@ObjectType()
-export class ToolPage0 extends Page {}
-@ObjectType()
-export class ToolPage1 extends Page {}
-@ObjectType()
-export class ToolPage2 extends Page {}
-@ObjectType()
-export class ToolPage3 extends Page {}
-@ObjectType()
-export class ToolPage4 extends Page {}
-@ObjectType()
-export class ToolPage5 extends Page {}
-@ObjectType()
-export class ToolPage6 extends Page {}
-@ObjectType()
-export class ToolPage7 extends Page {}
-@ObjectType()
-export class ToolPage8 extends Page {}
-@ObjectType()
-export class ToolPage9 extends Page {}
-@ObjectType()
-export class ToolPage10 extends Page {}
-@ObjectType()
-export class ToolPage11 extends Page {}
-@ObjectType()
-export class ToolPage12 extends Page {}
+// @ObjectType()
+// export class ToolPage0 extends Page {}
+// @ObjectType()
+// export class ToolPage1 extends Page {}
+// @ObjectType()
+// export class ToolPage2 extends Page {}
+// @ObjectType()
+// export class ToolPage3 extends Page {}
+// @ObjectType()
+// export class ToolPage4 extends Page {}
+// @ObjectType()
+// export class ToolPage5 extends Page {}
+// @ObjectType()
+// export class ToolPage6 extends Page {}
+// @ObjectType()
+// export class ToolPage7 extends Page {}
+// @ObjectType()
+// export class ToolPage8 extends Page {}
+// @ObjectType()
+// export class ToolPage9 extends Page {}
+// @ObjectType()
+// export class ToolPage10 extends Page {}
+// @ObjectType()
+// export class ToolPage11 extends Page {}
+// @ObjectType()
+// export class ToolPage12 extends Page {}
 
-@ObjectType()
-export class EnginePage0 extends Page {}
-@ObjectType()
-export class EnginePage1 extends Page {}
-@ObjectType()
-export class EnginePage2 extends Page {}
-@ObjectType()
-export class EnginePage3 extends Page {}
-@ObjectType()
-export class EnginePage4 extends Page {}
-@ObjectType()
-export class EnginePage5 extends Page {}
-@ObjectType()
-export class EnginePage6 extends Page {}
-@ObjectType()
-export class EnginePage7 extends Page {}
-@ObjectType()
-export class EnginePage8 extends Page {}
-@ObjectType()
-export class EnginePage9 extends Page {}
-@ObjectType()
-export class EnginePage10 extends Page {}
-@ObjectType()
-export class EnginePage11 extends Page {}
-@ObjectType()
-export class EnginePage12 extends Page {}
+// @ObjectType()
+// export class EnginePage0 extends Page {}
+// @ObjectType()
+// export class EnginePage1 extends Page {}
+// @ObjectType()
+// export class EnginePage2 extends Page {}
+// @ObjectType()
+// export class EnginePage3 extends Page {}
+// @ObjectType()
+// export class EnginePage4 extends Page {}
+// @ObjectType()
+// export class EnginePage5 extends Page {}
+// @ObjectType()
+// export class EnginePage6 extends Page {}
+// @ObjectType()
+// export class EnginePage7 extends Page {}
+// @ObjectType()
+// export class EnginePage8 extends Page {}
+// @ObjectType()
+// export class EnginePage9 extends Page {}
+// @ObjectType()
+// export class EnginePage10 extends Page {}
+// @ObjectType()
+// export class EnginePage11 extends Page {}
+// @ObjectType()
+// export class EnginePage12 extends Page {}
 
 @ObjectType()
 export class ListPetPage0 extends RelayTypes<PetPage0>(PetPage0) {}
@@ -389,3 +389,30 @@ export class ListPortfolioPage10 extends RelayTypes<PortfolioPage10>(PortfolioPa
 export class ListPortfolioPage11 extends RelayTypes<PortfolioPage11>(PortfolioPage11) {}
 @ObjectType()
 export class ListPortfolioPage12 extends RelayTypes<PortfolioPage12>(PortfolioPage12) {}
+
+@ObjectType()
+export class ListHardwareStorePage0 extends RelayTypes<HardwareStorePage0>(HardwareStorePage0) {}
+@ObjectType()
+export class ListHardwareStorePage1 extends RelayTypes<HardwareStorePage1>(HardwareStorePage1) {}
+@ObjectType()
+export class ListHardwareStorePage2 extends RelayTypes<HardwareStorePage2>(HardwareStorePage2) {}
+@ObjectType()
+export class ListHardwareStorePage3 extends RelayTypes<HardwareStorePage3>(HardwareStorePage3) {}
+@ObjectType()
+export class ListHardwareStorePage4 extends RelayTypes<HardwareStorePage4>(HardwareStorePage4) {}
+@ObjectType()
+export class ListHardwareStorePage5 extends RelayTypes<HardwareStorePage5>(HardwareStorePage5) {}
+@ObjectType()
+export class ListHardwareStorePage6 extends RelayTypes<HardwareStorePage6>(HardwareStorePage6) {}
+@ObjectType()
+export class ListHardwareStorePage7 extends RelayTypes<HardwareStorePage7>(HardwareStorePage7) {}
+@ObjectType()
+export class ListHardwareStorePage8 extends RelayTypes<HardwareStorePage8>(HardwareStorePage8) {}
+@ObjectType()
+export class ListHardwareStorePage9 extends RelayTypes<HardwareStorePage9>(HardwareStorePage9) {}
+@ObjectType()
+export class ListHardwareStorePage10 extends RelayTypes<HardwareStorePage10>(HardwareStorePage10) {}
+@ObjectType()
+export class ListHardwareStorePage11 extends RelayTypes<HardwareStorePage11>(HardwareStorePage11) {}
+@ObjectType()
+export class ListHardwareStorePage12 extends RelayTypes<HardwareStorePage12>(HardwareStorePage12) {}
