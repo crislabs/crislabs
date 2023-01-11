@@ -22,6 +22,7 @@ import {
   ListPetAdoption,
   PetAdoption,
 } from 'src/common/entities/product.model';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 import ConnectionArgs, {
   getPagingParameters,
 } from 'src/common/pagination/relay/connection.args';
@@ -113,6 +114,14 @@ export class PetAdoptionResolver {
   @Query(() => [PetAdoption], { name: 'petGetAdoptionsByParentId' })
   findByParentId(@Args('parentId') parentId: string) {
     return this.adoptionService.findByParentId(parentId);
+  }
+
+  @Query(() => [PetAdoption], { name: 'petGetAdoptionsByParentIdByPagination' })
+  findByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.adoptionService.findByParentIdByPagination(listInput,parentId);
   }
 
   @Query(() => ListPetAdoption, { name: 'petGetAdoptionsWithCursor' })

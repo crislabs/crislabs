@@ -24,6 +24,7 @@ import { HardwareStoreProduct } from 'src/common/entities/product.model';
 import { Type } from 'src/common/entities/site.model';
 import { HardwareStoreProductService } from 'src/products/categories/hardwareStore/category.service';
 import { HardwareStorePage10Service } from '../services/page10.service';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 // import { HardwareStoreProductService } from 'src/products/categories/hardwareStore/hardwareStore/category.service';
 
 @Resolver(() => HardwareStorePage9)
@@ -91,7 +92,6 @@ export class HardwareStorePage9Resolver {
   @Query(() => [HardwareStorePage9], { name: 'hardwareStoreGetPages9ByParentId' })
   findPagesByParentId(
     @Args('parentId') parentId: string,
-    // @Args('type') type: string,
   ) {
     return this.page9Service.findByParentId(parentId);
   }
@@ -101,6 +101,14 @@ export class HardwareStorePage9Resolver {
     @Args('siteId') siteId: string,
   ) {
     return this.page9Service.findBySiteId(siteId);
+  }
+
+  @Query(() => [HardwareStorePage9], { name: 'hardwareStoreGetPages9ByParentIdByPagination' })
+  findPagesByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.page9Service.findByParentIdByPagination(listInput,parentId);
   }
 
   @Query(() => ListHardwareStorePage9, { name: 'hardwareStoreGetPages9WithCursor' })

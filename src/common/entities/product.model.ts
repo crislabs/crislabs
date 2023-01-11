@@ -79,6 +79,8 @@ export class PetProduct extends Product {}
 
 @ObjectType()
 export class PetAdoption extends Product {}
+@ObjectType()
+export class FoodProduct extends Product {}
 
 // @ObjectType()
 // export class ListWearProduct extends RelayTypes<WearProduct>(WearProduct) {}
@@ -88,3 +90,5 @@ export class ListPetAdoption extends RelayTypes<PetAdoption>(PetAdoption) {}
 export class ListPetProduct extends RelayTypes<PetProduct>(PetProduct) {}
 @ObjectType()
 export class ListHardwareStoreProduct extends RelayTypes<HardwareStoreProduct>(HardwareStoreProduct) {}
+@ObjectType()
+export class ListFoodProduct extends RelayTypes<FoodProduct>(FoodProduct) {}

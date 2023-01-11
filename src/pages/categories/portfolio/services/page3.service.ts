@@ -143,7 +143,10 @@ export class PortfolioPage3Service {
 
     return document;
   }
-
+  findByParentIdByPagination(paginationQuery: ListInput, parentId: string) {
+    const { limit, offset } = paginationQuery;
+    return this.pageModel.find({ parentId: parentId }).sort({ 'dataPage.updateDate.lastUpdatedAt': -1 }).skip(offset).limit(limit).exec();
+  }
   async findByCursor(paginationQuery: ListInput, parentId: string) {
     const { limit, offset } = paginationQuery;
     const count = await this.pageModel.count({ parentId: parentId });

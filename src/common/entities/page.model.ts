@@ -416,3 +416,30 @@ export class ListHardwareStorePage10 extends RelayTypes<HardwareStorePage10>(Har
 export class ListHardwareStorePage11 extends RelayTypes<HardwareStorePage11>(HardwareStorePage11) {}
 @ObjectType()
 export class ListHardwareStorePage12 extends RelayTypes<HardwareStorePage12>(HardwareStorePage12) {}
+
+@ObjectType()
+export class ListFoodPage0 extends RelayTypes<FoodPage0>(FoodPage0) {}
+@ObjectType()
+export class ListFoodPage1 extends RelayTypes<FoodPage1>(FoodPage1) {}
+@ObjectType()
+export class ListFoodPage2 extends RelayTypes<FoodPage2>(FoodPage2) {}
+@ObjectType()
+export class ListFoodPage3 extends RelayTypes<FoodPage3>(FoodPage3) {}
+@ObjectType()
+export class ListFoodPage4 extends RelayTypes<FoodPage4>(FoodPage4) {}
+@ObjectType()
+export class ListFoodPage5 extends RelayTypes<FoodPage5>(FoodPage5) {}
+@ObjectType()
+export class ListFoodPage6 extends RelayTypes<FoodPage6>(FoodPage6) {}
+@ObjectType()
+export class ListFoodPage7 extends RelayTypes<FoodPage7>(FoodPage7) {}
+@ObjectType()
+export class ListFoodPage8 extends RelayTypes<FoodPage8>(FoodPage8) {}
+@ObjectType()
+export class ListFoodPage9 extends RelayTypes<FoodPage9>(FoodPage9) {}
+@ObjectType()
+export class ListFoodPage10 extends RelayTypes<FoodPage10>(FoodPage10) {}
+@ObjectType()
+export class ListFoodPage11 extends RelayTypes<FoodPage11>(FoodPage11) {}
+@ObjectType()
+export class ListFoodPage12 extends RelayTypes<FoodPage12>(FoodPage12) {}

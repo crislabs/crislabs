@@ -25,6 +25,9 @@ export const FoodPage7Schema = SchemaFactory.createForClass(PageDocument);
 export const FoodPage8Schema = SchemaFactory.createForClass(PageDocument);
 export const FoodPage9Schema = SchemaFactory.createForClass(PageDocument);
 export const FoodPage10Schema = SchemaFactory.createForClass(PageDocument);
+export const FoodPage11Schema = SchemaFactory.createForClass(PageDocument);
+export const FoodPage12Schema = SchemaFactory.createForClass(PageDocument);
+
 export const WearPage0Schema = SchemaFactory.createForClass(PageDocument);
 export const WearPage1Schema = SchemaFactory.createForClass(PageDocument);
 export const WearPage2Schema = SchemaFactory.createForClass(PageDocument);

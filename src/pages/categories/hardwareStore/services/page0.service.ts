@@ -20,7 +20,7 @@ export class HardwareStorePage0Service {
   constructor(
     @InjectModel(HardwareStorePage0.name, 'hardwareStoreDB')
     private pageModel: Model<PageDocument>,
-  ) {}
+  ) { }
 
   async create(input: CreatePage) {
     // try {
@@ -33,7 +33,7 @@ export class HardwareStorePage0Service {
     //     cause: error
     //   });
     // }
-    
+
     const page = await this.pageModel.findOne(
       {
         slug: slug(input.title),
@@ -102,7 +102,7 @@ export class HardwareStorePage0Service {
     // await this.page1Service.deleteManyByParentId([id])
     return id;
   }
-  
+
   async deleteMany(ids: string[]) {
     await this.pageModel.deleteMany({ _id: { $in: ids } });
     // await this.page1Service.deleteManyByParentId(ids)
@@ -135,6 +135,11 @@ export class HardwareStorePage0Service {
 
   findBySiteId(siteId: string) {
     return this.pageModel.find({ siteId: siteId });
+  }
+
+  findByParentIdByPagination(paginationQuery: ListInput, parentId: string) {
+    const { limit, offset } = paginationQuery;
+    return this.pageModel.find({ parentId: parentId }).sort({ 'dataPage.updateDate.lastUpdatedAt': -1 }).skip(offset).limit(limit).exec();
   }
 
   async findOne(id: string) {

@@ -76,6 +76,38 @@ type Tags {
   slug: String!
 }
 
+type FoodSite {
+  _id: ID!
+  dataSite: DataSite!
+  url: String!
+  pages: [FoodPage0]
+  users: [FoodUser]
+  products: [FoodProduct]
+  articles: [FoodArticle]
+}
+
+type ListFoodSite {
+  page: FoodSiteConnection!
+  pageData: PageData
+}
+
+type FoodSiteConnection {
+  edges: [FoodSiteEdge!]
+  pageInfo: FoodSitePageInfo
+}
+
+type FoodSiteEdge {
+  cursor: String
+  node: FoodSite
+}
+
+type FoodSitePageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
 type HardwareStoreSite {
   _id: ID!
   dataSite: DataSite!
@@ -179,6 +211,13 @@ type DataComment {
   likes: [String!]
 }
 
+type FoodComment {
+  _id: ID!
+  dataComment: DataComment!
+  siteId: String!
+  parentId: String!
+}
+
 type PetComment {
   _id: ID!
   dataComment: DataComment!
@@ -237,6 +276,37 @@ type PetArticleEdge {
 }
 
 type PetArticlePageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type FoodArticle {
+  _id: ID!
+  dataArticle: DataArticle!
+  siteId: String!
+  parentId: String!
+  slug: String!
+  comments: [FoodComment]
+}
+
+type ListFoodArticle {
+  page: FoodArticleConnection!
+  pageData: PageData
+}
+
+type FoodArticleConnection {
+  edges: [FoodArticleEdge!]
+  pageInfo: FoodArticlePageInfo
+}
+
+type FoodArticleEdge {
+  cursor: String
+  node: FoodArticle
+}
+
+type FoodArticlePageInfo {
   startCursor: String
   endCursor: String
   hasPreviousPage: Boolean!
@@ -317,6 +387,136 @@ type ComponentPage {
   uid: String!
   component: String!
   html: String!
+}
+
+type FoodPage0 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  pages: [FoodPage1]
+  products: [FoodProduct]
+  articles: [FoodArticle]
+}
+
+type FoodPage1 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage2]
+}
+
+type FoodPage2 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage3]
+}
+
+type FoodPage3 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage4]
+}
+
+type FoodPage4 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage5]
+}
+
+type FoodPage5 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage6]
+}
+
+type FoodPage6 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage7]
+}
+
+type FoodPage7 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage8]
+}
+
+type FoodPage8 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage9]
+}
+
+type FoodPage9 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage10]
+}
+
+type FoodPage10 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage11]
+}
+
+type FoodPage11 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
+  pages: [FoodPage12]
+}
+
+type FoodPage12 {
+  _id: ID!
+  dataPage: DataPage!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  products: [FoodProduct]
 }
 
 type HardwareStorePage0 {
@@ -1554,6 +1754,292 @@ type HardwareStorePage12PageInfo {
   hasNextPage: Boolean!
 }
 
+type ListFoodPage0 {
+  page: FoodPage0Connection!
+  pageData: PageData
+}
+
+type FoodPage0Connection {
+  edges: [FoodPage0Edge!]
+  pageInfo: FoodPage0PageInfo
+}
+
+type FoodPage0Edge {
+  cursor: String
+  node: FoodPage0
+}
+
+type FoodPage0PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage1 {
+  page: FoodPage1Connection!
+  pageData: PageData
+}
+
+type FoodPage1Connection {
+  edges: [FoodPage1Edge!]
+  pageInfo: FoodPage1PageInfo
+}
+
+type FoodPage1Edge {
+  cursor: String
+  node: FoodPage1
+}
+
+type FoodPage1PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage2 {
+  page: FoodPage2Connection!
+  pageData: PageData
+}
+
+type FoodPage2Connection {
+  edges: [FoodPage2Edge!]
+  pageInfo: FoodPage2PageInfo
+}
+
+type FoodPage2Edge {
+  cursor: String
+  node: FoodPage2
+}
+
+type FoodPage2PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage3 {
+  page: FoodPage3Connection!
+  pageData: PageData
+}
+
+type FoodPage3Connection {
+  edges: [FoodPage3Edge!]
+  pageInfo: FoodPage3PageInfo
+}
+
+type FoodPage3Edge {
+  cursor: String
+  node: FoodPage3
+}
+
+type FoodPage3PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage4 {
+  page: FoodPage4Connection!
+  pageData: PageData
+}
+
+type FoodPage4Connection {
+  edges: [FoodPage4Edge!]
+  pageInfo: FoodPage4PageInfo
+}
+
+type FoodPage4Edge {
+  cursor: String
+  node: FoodPage4
+}
+
+type FoodPage4PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage5 {
+  page: FoodPage5Connection!
+  pageData: PageData
+}
+
+type FoodPage5Connection {
+  edges: [FoodPage5Edge!]
+  pageInfo: FoodPage5PageInfo
+}
+
+type FoodPage5Edge {
+  cursor: String
+  node: FoodPage5
+}
+
+type FoodPage5PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage6 {
+  page: FoodPage6Connection!
+  pageData: PageData
+}
+
+type FoodPage6Connection {
+  edges: [FoodPage6Edge!]
+  pageInfo: FoodPage6PageInfo
+}
+
+type FoodPage6Edge {
+  cursor: String
+  node: FoodPage6
+}
+
+type FoodPage6PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage7 {
+  page: FoodPage7Connection!
+  pageData: PageData
+}
+
+type FoodPage7Connection {
+  edges: [FoodPage7Edge!]
+  pageInfo: FoodPage7PageInfo
+}
+
+type FoodPage7Edge {
+  cursor: String
+  node: FoodPage7
+}
+
+type FoodPage7PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage8 {
+  page: FoodPage8Connection!
+  pageData: PageData
+}
+
+type FoodPage8Connection {
+  edges: [FoodPage8Edge!]
+  pageInfo: FoodPage8PageInfo
+}
+
+type FoodPage8Edge {
+  cursor: String
+  node: FoodPage8
+}
+
+type FoodPage8PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage9 {
+  page: FoodPage9Connection!
+  pageData: PageData
+}
+
+type FoodPage9Connection {
+  edges: [FoodPage9Edge!]
+  pageInfo: FoodPage9PageInfo
+}
+
+type FoodPage9Edge {
+  cursor: String
+  node: FoodPage9
+}
+
+type FoodPage9PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage10 {
+  page: FoodPage10Connection!
+  pageData: PageData
+}
+
+type FoodPage10Connection {
+  edges: [FoodPage10Edge!]
+  pageInfo: FoodPage10PageInfo
+}
+
+type FoodPage10Edge {
+  cursor: String
+  node: FoodPage10
+}
+
+type FoodPage10PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage11 {
+  page: FoodPage11Connection!
+  pageData: PageData
+}
+
+type FoodPage11Connection {
+  edges: [FoodPage11Edge!]
+  pageInfo: FoodPage11PageInfo
+}
+
+type FoodPage11Edge {
+  cursor: String
+  node: FoodPage11
+}
+
+type FoodPage11PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
+type ListFoodPage12 {
+  page: FoodPage12Connection!
+  pageData: PageData
+}
+
+type FoodPage12Connection {
+  edges: [FoodPage12Edge!]
+  pageInfo: FoodPage12PageInfo
+}
+
+type FoodPage12Edge {
+  cursor: String
+  node: FoodPage12
+}
+
+type FoodPage12PageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
 type DataProduct {
   type: String!
   mark: Mark
@@ -1606,6 +2092,15 @@ type PetAdoption {
   siteId: String!
   parentId: String!
   comments: [PetComment]
+}
+
+type FoodProduct {
+  _id: ID!
+  dataProduct: DataProduct!
+  slug: String!
+  siteId: String!
+  parentId: String!
+  comments: [FoodComment]
 }
 
 type ListPetAdoption {
@@ -1674,6 +2169,28 @@ type HardwareStoreProductPageInfo {
   hasNextPage: Boolean!
 }
 
+type ListFoodProduct {
+  page: FoodProductConnection!
+  pageData: PageData
+}
+
+type FoodProductConnection {
+  edges: [FoodProductEdge!]
+  pageInfo: FoodProductPageInfo
+}
+
+type FoodProductEdge {
+  cursor: String
+  node: FoodProduct
+}
+
+type FoodProductPageInfo {
+  startCursor: String
+  endCursor: String
+  hasPreviousPage: Boolean!
+  hasNextPage: Boolean!
+}
+
 type DataUser {
   updateDate: UpdateDate!
   username: String!
@@ -1711,93 +2228,116 @@ type HardwareStoreUser {
   siteId: String!
 }
 
+type FoodUser {
+  _id: ID!
+  dataUser: DataUser!
+  email: String!
+  password: String!
+  siteId: String!
+}
+
 type Query {
   petGetSite(id: String!): PetSite!
   petGetSites: [PetSite!]!
+  petGetSitesByPagination(listInput: ListInput!): [PetSite!]!
   petGetSitesWithCursor(args: ConnectionArgs!): ListPetSite!
   petGetPage0(id: String!): PetPage0!
   petGetPage0BySlug(slug: String!, siteId: String!): PetPage0!
   petGetPages0: [PetPage0!]!
   petGetPages0ByParentId(parentId: String!): [PetPage0!]!
   petGetPages0BySiteId(siteId: String!): [PetPage0!]!
+  petGetPages0ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage0!]!
   petGetPages0WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage0!
   petGetPage1(id: String!): PetPage1!
   petGetPage1BySlug(slug: String!, siteId: String!): PetPage1!
   petGetPages1: [PetPage1!]!
   petGetPages1BySiteId(siteId: String!): [PetPage1!]!
   petGetPages1ByParentId(parentId: String!): [PetPage1!]!
+  petGetPages1ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage1!]!
   petGetPages1WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage1!
   petGetPage2(id: String!): PetPage2!
   petGetPage2BySlug(slug: String!, siteId: String!): PetPage2!
   petGetPages2: [PetPage2!]!
   petGetPages2ByParentId(parentId: String!): [PetPage2!]!
   petGetPages2BySiteId(siteId: String!): [PetPage2!]!
+  petGetPages2ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage2!]!
   petGetPages2WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage2!
   petGetPage3(id: String!): PetPage3!
   petGetPage3BySlug(slug: String!, siteId: String!): PetPage3!
   petGetPages3: [PetPage3!]!
   petGetPages3ByParentId(parentId: String!): [PetPage3!]!
   petGetPages3BySiteId(siteId: String!): [PetPage3!]!
+  petGetPages3ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage3!]!
   petGetPages3WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage3!
   petGetPage4(id: String!): PetPage4!
   petGetPage4BySlug(slug: String!, siteId: String!): PetPage4!
   petGetPages4: [PetPage4!]!
   petGetPages4ByParentId(parentId: String!): [PetPage4!]!
   petGetPages4BySiteId(siteId: String!): [PetPage4!]!
+  petGetPages4ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage4!]!
   petGetPages4WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage4!
   petGetPage5(id: String!): PetPage5!
   petGetPage5BySlug(slug: String!, siteId: String!): PetPage5!
   petGetPages5: [PetPage5!]!
   petGetPages5ByParentId(parentId: String!): [PetPage5!]!
   petGetPages5BySiteId(siteId: String!): [PetPage5!]!
+  petGetPages5ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage5!]!
   petGetPages5WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage5!
   petGetPage6(id: String!): PetPage6!
   petGetPage6BySlug(slug: String!, siteId: String!): PetPage6!
   petGetPages6: [PetPage6!]!
   petGetPages6ByParentId(parentId: String!): [PetPage6!]!
   petGetPages6BySiteId(siteId: String!): [PetPage6!]!
+  petGetPages6ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage6!]!
   petGetPages6WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage6!
   petGetPage7(id: String!): PetPage7!
   petGetPage7BySlug(slug: String!, siteId: String!): PetPage7!
   petGetPages7: [PetPage7!]!
   petGetPages7ByParentId(parentId: String!): [PetPage7!]!
   petGetPages7BySiteId(siteId: String!): [PetPage7!]!
+  petGetPages7ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage7!]!
   petGetPages7WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage7!
   petGetPage8(id: String!): PetPage8!
   petGetPage8BySlug(slug: String!, siteId: String!): PetPage8!
   petGetPages8: [PetPage8!]!
   petGetPages8ByParentId(parentId: String!): [PetPage8!]!
   petGetPages8BySiteId(siteId: String!): [PetPage8!]!
+  petGetPages8ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage8!]!
   petGetPages8WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage8!
   petGetPage9(id: String!): PetPage9!
   petGetPage9BySlug(slug: String!, siteId: String!): PetPage9!
   petGetPages9: [PetPage9!]!
   petGetPages9ByParentId(parentId: String!): [PetPage9!]!
   petGetPages9BySiteId(siteId: String!): [PetPage9!]!
+  petGetPages9ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage9!]!
   petGetPages9WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage9!
   petGetPage10(id: String!): PetPage10!
   petGetPage10BySlug(slug: String!, siteId: String!): PetPage10!
   petGetPages10: [PetPage10!]!
   petGetPages10ByParentId(parentId: String!): [PetPage10!]!
   petGetPages10BySiteId(siteId: String!): [PetPage10!]!
+  petGetPages10ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage10!]!
   petGetPages10WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage10!
   petGetPage11(id: String!): PetPage11!
   petGetPage11BySlug(slug: String!, siteId: String!): PetPage11!
   petGetPages11: [PetPage11!]!
   petGetPages11ByParentId(parentId: String!): [PetPage11!]!
   petGetPages11BySiteId(siteId: String!): [PetPage11!]!
+  petGetPages11ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage11!]!
   petGetPages11WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage11!
   petGetPage12(id: String!): PetPage12!
   petGetPage12BySlug(slug: String!, siteId: String!): PetPage12!
   petGetPages12: [PetPage12!]!
   petGetPages12ByParentId(parentId: String!): [PetPage12!]!
   petGetPages12BySiteId(siteId: String!): [PetPage12!]!
+  petGetPages12ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetPage12!]!
   petGetPages12WithCursor(args: ConnectionArgs!, parentId: String!): ListPetPage12!
   petGetProduct(id: String!): PetProduct!
   petGetProductBySlug(slug: String!, siteId: String!): PetProduct!
   petGetProducts: [PetProduct!]!
   petGetProductsBySiteId(siteId: String!): [PetProduct!]!
   petGetProductsByParentId(parentId: String!): [PetProduct!]!
+  petGetProductsByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetProduct!]!
   petGetProductsWithCursor(args: ConnectionArgs!, parentId: String!): ListPetProduct!
   petGetCommentsByParentId(parentId: String!): [PetComment!]!
   petGetAdoption(id: String!): PetAdoption!
@@ -1805,66 +2345,77 @@ type Query {
   petGetAdoptions: [PetAdoption!]!
   petGetAdoptionsBySiteId(siteId: String!): [PetAdoption!]!
   petGetAdoptionsByParentId(parentId: String!): [PetAdoption!]!
+  petGetAdoptionsByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetAdoption!]!
   petGetAdoptionsWithCursor(args: ConnectionArgs!, parentId: String!): ListPetAdoption!
   petGetArticle(id: String!): PetArticle!
   petGetArticleBySlug(siteId: String!, slug: String!): PetArticle!
   petGetArticles: [PetArticle!]!
   petGetArticlesByParentId(parentId: String!): [PetArticle!]!
   petGetArticlesBySiteId(siteId: String!): [PetArticle!]!
+  petGetArticlesByParentIdByPagination(listInput: ListInput!, parentId: String!): [PetArticle!]!
   petGetArticlesWithCursor(args: ConnectionArgs!, parentId: String!): ListPetArticle!
   petGetUser(id: String!): PetUser!
   petGetUserByEmail(email: String!, siteId: String!): PetUser!
   petGetUsers: [PetUser!]!
   portfolioGetSite(id: String!): PortfolioSite!
   portfolioGetSites: [PortfolioSite!]!
+  portafolioGetSitesByPagination(listInput: ListInput!): [PortfolioSite!]!
   portfolioGetSitesWithCursor(args: ConnectionArgs!): ListPortfolioSite!
   portfolioGetPage0(id: String!): PortfolioPage0!
   portfolioGetPage0BySlug(slug: String!, siteId: String!): PortfolioPage0!
   portfolioGetPages0: [PortfolioPage0!]!
   portfolioGetPages0ByParentId(parentId: String!): [PortfolioPage0!]!
   portfolioGetPages0BySiteId(siteId: String!): [PortfolioPage0!]!
+  portfolioGetPages0ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage0!]!
   portfolioGetPages0WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage0!
   portfolioGetPage1(id: String!): PortfolioPage1!
   portfolioGetPage1BySlug(slug: String!, siteId: String!): PortfolioPage1!
   portfolioGetPages1: [PortfolioPage1!]!
   portfolioGetPages1ByParentId(parentId: String!): [PortfolioPage1!]!
   portfolioGetPages1BySiteId(siteId: String!): [PortfolioPage1!]!
+  portfolioGetPages1ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage1!]!
   portfolioGetPages1WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage1!
   portfolioGetPage2(id: String!): PortfolioPage2!
   portfolioGetPage2BySlug(slug: String!, siteId: String!): PortfolioPage2!
   portfolioGetPages2: [PortfolioPage2!]!
   portfolioGetPages2ByParentId(parentId: String!): [PortfolioPage2!]!
   portfolioGetPages2BySiteId(siteId: String!): [PortfolioPage2!]!
+  portfolioGetPages2ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage2!]!
   portfolioGetPages2WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage2!
   portfolioGetPage3(id: String!): PortfolioPage3!
   portfolioGetPage3BySlug(slug: String!, siteId: String!): PortfolioPage3!
   portfolioGetPages3: [PortfolioPage3!]!
   portfolioGetPages3ByParentId(parentId: String!): [PortfolioPage3!]!
   portfolioGetPages3BySiteId(siteId: String!): [PortfolioPage3!]!
+  portfolioGetPages3ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage3!]!
   portfolioGetPages3WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage3!
   portfolioGetPage4(id: String!): PortfolioPage4!
   portfolioGetPage4BySlug(slug: String!, siteId: String!): PortfolioPage4!
   portfolioGetPages4: [PortfolioPage4!]!
   portfolioGetPages4ByParentId(parentId: String!): [PortfolioPage4!]!
   portfolioGetPages4BySiteId(siteId: String!): [PortfolioPage4!]!
+  portfolioGetPages4ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage4!]!
   portfolioGetPages4WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage4!
   portfolioGetPage5(id: String!): PortfolioPage5!
   portfolioGetPage5BySlug(slug: String!, siteId: String!): PortfolioPage5!
   portfolioGetPages5: [PortfolioPage5!]!
   portfolioGetPages5ByParentId(parentId: String!): [PortfolioPage5!]!
   portfolioGetPages5BySiteId(siteId: String!): [PortfolioPage5!]!
+  portfolioGetPages5ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage5!]!
   portfolioGetPages5WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage5!
   portfolioGetPage6(id: String!): PortfolioPage6!
   portfolioGetPage6BySlug(slug: String!, siteId: String!): PortfolioPage6!
   portfolioGetPages6: [PortfolioPage6!]!
   portfolioGetPages6ByParentId(parentId: String!): [PortfolioPage6!]!
   portfolioGetPages6BySiteId(siteId: String!): [PortfolioPage6!]!
+  portfolioGetPages6ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage6!]!
   portfolioGetPages6WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage6!
   portfolioGetPage7(id: String!): PortfolioPage7!
   portfolioGetPage7BySlug(slug: String!, siteId: String!): PortfolioPage7!
   portfolioGetPages7: [PortfolioPage7!]!
   portfolioGetPages7ByParentId(parentId: String!): [PortfolioPage7!]!
   portfolioGetPages7BySiteId(siteId: String!): [PortfolioPage7!]!
+  portfolioGetPages8ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage8!]!
   portfolioGetPages7WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage7!
   portfolioGetPage8(id: String!): PortfolioPage8!
   portfolioGetPage8BySlug(slug: String!, siteId: String!): PortfolioPage8!
@@ -1877,24 +2428,28 @@ type Query {
   portfolioGetPages9: [PortfolioPage9!]!
   portfolioGetPages9ByParentId(parentId: String!): [PortfolioPage9!]!
   portfolioGetPages9BySiteId(siteId: String!): [PortfolioPage9!]!
+  portfolioGetPages9ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage9!]!
   portfolioGetPages9WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage9!
   portfolioGetPage10(id: String!): PortfolioPage10!
   portfolioGetPage10BySlug(slug: String!, siteId: String!): PortfolioPage10!
   portfolioGetPages10: [PortfolioPage10!]!
   portfolioGetPages10ByParentId(parentId: String!): [PortfolioPage10!]!
   portfolioGetPages10BySiteId(siteId: String!): [PortfolioPage10!]!
+  portfolioGetPages10ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage10!]!
   portfolioGetPages10WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage10!
   portfolioGetPage11(id: String!): PortfolioPage11!
   portfolioGetPage11BySlug(slug: String!, siteId: String!): PortfolioPage11!
   portfolioGetPages11: [PortfolioPage11!]!
   portfolioGetPages11ByParentId(parentId: String!): [PortfolioPage11!]!
   portfolioGetPages11BySiteId(siteId: String!): [PortfolioPage11!]!
+  portfolioGetPages11ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage11!]!
   portfolioGetPages11WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage11!
   portfolioGetPage12(id: String!): PortfolioPage12!
   portfolioGetPage12BySlug(slug: String!, siteId: String!): PortfolioPage12!
   portfolioGetPages12: [PortfolioPage12!]!
   portfolioGetPages12ByParentId(parentId: String!): [PortfolioPage12!]!
   portfolioGetPages12BySiteId(siteId: String!): [PortfolioPage12!]!
+  portfolioGetPages12ByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioPage12!]!
   portfolioGetPages12WithCursor(args: ConnectionArgs!, parentId: String!): ListPortfolioPage12!
   portfolioGetUser(id: String!): PortfolioUser!
   portfolioGetUserByEmail(email: String!, siteId: String!): PortfolioUser!
@@ -1904,95 +2459,111 @@ type Query {
   portfolioGetArticles: [PortfolioArticle!]!
   portfolioGetArticlesByParentId(parentId: String!): [PortfolioArticle!]!
   portfolioGetArticlesBySiteId(siteId: String!): [PortfolioArticle!]!
+  portfolioGetArticlesByParentIdByPagination(listInput: ListInput!, parentId: String!): [PortfolioArticle!]!
   portfolioGetArticlesWithCursorByParentId(args: ConnectionArgs!, parentId: String!): ListPortfolioArticle!
   portfolioGetArticlesWithCursorBySiteId(args: ConnectionArgs!, siteId: String!): ListPortfolioArticle!
   portfolioGetCommentsByParentId(parentId: String!): [PortfolioComment!]!
   hardwareStoreGetSite(id: String!): HardwareStoreSite!
   hardwareStoreGetSites: [HardwareStoreSite!]!
+  hardwareStoreGetSitesByPagination(listInput: ListInput!): [HardwareStoreSite!]!
   hardwareStoreGetSitesWithCursor(args: ConnectionArgs!): ListHardwareStoreSite!
   hardwareStoreGetPage0(id: String!): HardwareStorePage0!
   hardwareStoreGetPage0BySlug(slug: String!, siteId: String!): HardwareStorePage0!
   hardwareStoreGetPages0: [HardwareStorePage0!]!
   hardwareStoreGetPages0ByParentId(parentId: String!): [HardwareStorePage0!]!
   hardwareStoreGetPages0BySiteId(siteId: String!): [HardwareStorePage0!]!
+  hardwareStoreGetPages0ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage0!]!
   hardwareStoreGetPages0WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage0!
   hardwareStoreGetPage1(id: String!): HardwareStorePage1!
   hardwareStoreGetPage1BySlug(slug: String!, siteId: String!): HardwareStorePage1!
   hardwareStoreGetPages1: [HardwareStorePage1!]!
   hardwareStoreGetPages1BySiteId(siteId: String!): [HardwareStorePage1!]!
   hardwareStoreGetPages1ByParentId(parentId: String!): [HardwareStorePage1!]!
+  hardwareStoreGetPages1ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage1!]!
   hardwareStoreGetPages1WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage1!
   hardwareStoreGetPage2(id: String!): HardwareStorePage2!
   hardwareStoreGetPage2BySlug(slug: String!, siteId: String!): HardwareStorePage2!
   hardwareStoreGetPages2: [HardwareStorePage2!]!
   hardwareStoreGetPages2ByParentId(parentId: String!): [HardwareStorePage2!]!
   hardwareStoreGetPages2BySiteId(siteId: String!): [HardwareStorePage2!]!
+  hardwareStoreGetPages2ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage2!]!
   hardwareStoreGetPages2WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage2!
   hardwareStoreGetPage3(id: String!): HardwareStorePage3!
   hardwareStoreGetPage3BySlug(slug: String!, siteId: String!): HardwareStorePage3!
   hardwareStoreGetPages3: [HardwareStorePage3!]!
   hardwareStoreGetPages3ByParentId(parentId: String!): [HardwareStorePage3!]!
   hardwareStoreGetPages3BySiteId(siteId: String!): [HardwareStorePage3!]!
+  hardwareStoreGetPages3ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage3!]!
   hardwareStoreGetPages3WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage3!
   hardwareStoreGetPage4(id: String!): HardwareStorePage4!
   hardwareStoreGetPage4BySlug(slug: String!, siteId: String!): HardwareStorePage4!
   hardwareStoreGetPages4: [HardwareStorePage4!]!
   hardwareStoreGetPages4ByParentId(parentId: String!): [HardwareStorePage4!]!
   hardwareStoreGetPages4BySiteId(siteId: String!): [HardwareStorePage4!]!
+  hardwareStoreGetPages4ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage4!]!
   hardwareStoreGetPages4WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage4!
   hardwareStoreGetPage5(id: String!): HardwareStorePage5!
   hardwareStoreGetPage5BySlug(slug: String!, siteId: String!): HardwareStorePage5!
   hardwareStoreGetPages5: [HardwareStorePage5!]!
   hardwareStoreGetPages5ByParentId(parentId: String!): [HardwareStorePage5!]!
   hardwareStoreGetPages5BySiteId(siteId: String!): [HardwareStorePage5!]!
+  hardwareStoreGetPages5ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage5!]!
   hardwareStoreGetPages5WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage5!
   hardwareStoreGetPage6(id: String!): HardwareStorePage6!
   hardwareStoreGetPage6BySlug(slug: String!, siteId: String!): HardwareStorePage6!
   hardwareStoreGetPages6: [HardwareStorePage6!]!
   hardwareStoreGetPages6ByParentId(parentId: String!): [HardwareStorePage6!]!
   hardwareStoreGetPages6BySiteId(siteId: String!): [HardwareStorePage6!]!
+  hardwareStoreGetPages6ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage6!]!
   hardwareStoreGetPages6WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage6!
   hardwareStoreGetPage7(id: String!): HardwareStorePage7!
   hardwareStoreGetPage7BySlug(slug: String!, siteId: String!): HardwareStorePage7!
   hardwareStoreGetPages7: [HardwareStorePage7!]!
   hardwareStoreGetPages7ByParentId(parentId: String!): [HardwareStorePage7!]!
   hardwareStoreGetPages7BySiteId(siteId: String!): [HardwareStorePage7!]!
+  hardwareStoreGetPages7ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage7!]!
   hardwareStoreGetPages7WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage7!
   hardwareStoreGetPage8(id: String!): HardwareStorePage8!
   hardwareStoreGetPage8BySlug(slug: String!, siteId: String!): HardwareStorePage8!
   hardwareStoreGetPages8: [HardwareStorePage8!]!
   hardwareStoreGetPages8ByParentId(parentId: String!): [HardwareStorePage8!]!
   hardwareStoreGetPages8BySiteId(siteId: String!): [HardwareStorePage8!]!
+  hardwareStoreGetPages8ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage8!]!
   hardwareStoreGetPages8WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage8!
   hardwareStoreGetPage9(id: String!): HardwareStorePage9!
   hardwareStoreGetPage9BySlug(slug: String!, siteId: String!): HardwareStorePage9!
   hardwareStoreGetPages9: [HardwareStorePage9!]!
   hardwareStoreGetPages9ByParentId(parentId: String!): [HardwareStorePage9!]!
   hardwareStoreGetPages9BySiteId(siteId: String!): [HardwareStorePage9!]!
+  hardwareStoreGetPages9ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage9!]!
   hardwareStoreGetPages9WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage9!
   hardwareStoreGetPage10(id: String!): HardwareStorePage10!
   hardwareStoreGetPage10BySlug(slug: String!, siteId: String!): HardwareStorePage10!
   hardwareStoreGetPages10: [HardwareStorePage10!]!
   hardwareStoreGetPages10ByParentId(parentId: String!): [HardwareStorePage10!]!
   hardwareStoreGetPages10BySiteId(siteId: String!): [HardwareStorePage10!]!
+  hardwareStoreGetPages10ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage10!]!
   hardwareStoreGetPages10WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage10!
   hardwareStoreGetPage11(id: String!): HardwareStorePage11!
   hardwareStoreGetPage11BySlug(slug: String!, siteId: String!): HardwareStorePage11!
   hardwareStoreGetPages11: [HardwareStorePage11!]!
   hardwareStoreGetPages11ByParentId(parentId: String!): [HardwareStorePage11!]!
   hardwareStoreGetPages11BySiteId(siteId: String!): [HardwareStorePage11!]!
+  hardwareStoreGetPages11ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage11!]!
   hardwareStoreGetPages11WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage11!
   hardwareStoreGetPage12(id: String!): HardwareStorePage12!
   hardwareStoreGetPage12BySlug(slug: String!, siteId: String!): HardwareStorePage12!
   hardwareStoreGetPages12: [HardwareStorePage12!]!
   hardwareStoreGetPages12ByParentId(parentId: String!): [HardwareStorePage12!]!
   hardwareStoreGetPages12BySiteId(siteId: String!): [HardwareStorePage12!]!
+  hardwareStoreGetPages12ByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStorePage12!]!
   hardwareStoreGetPages12WithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStorePage12!
   hardwareStoreGetProduct(id: String!): HardwareStoreProduct!
   hardwareStoreGetProductBySlug(slug: String!, siteId: String!): HardwareStoreProduct!
   hardwareStoreGetProducts: [HardwareStoreProduct!]!
   hardwareStoreGetProductsBySiteId(siteId: String!): [HardwareStoreProduct!]!
   hardwareStoreGetProductsByParentId(parentId: String!): [HardwareStoreProduct!]!
+  hardwareStoreGetProductsByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStoreProduct!]!
   hardwareStoreGetProductsWithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStoreProduct!
   hardwareStoreGetCommentsByParentId(parentId: String!): [HardwareStoreComment!]!
   hardwareStoreGetArticle(id: String!): HardwareStoreArticle!
@@ -2000,10 +2571,132 @@ type Query {
   hardwareStoreGetArticles: [HardwareStoreArticle!]!
   hardwareStoreGetArticlesByParentId(parentId: String!): [HardwareStoreArticle!]!
   hardwareStoreGetArticlesBySiteId(siteId: String!): [HardwareStoreArticle!]!
+  hardwareStoreGetArticlesByParentIdByPagination(listInput: ListInput!, parentId: String!): [HardwareStoreArticle!]!
   hardwareStoreGetArticlesWithCursor(args: ConnectionArgs!, parentId: String!): ListHardwareStoreArticle!
   hardwareStoreGetUser(id: String!): HardwareStoreUser!
   hardwareStoreGetUserByEmail(email: String!, siteId: String!): HardwareStoreUser!
   hardwareStoreGetUsers: [HardwareStoreUser!]!
+  foodGetSite(id: String!): FoodSite!
+  foodGetSites: [FoodSite!]!
+  foodGetSitesByPagination(listInput: ListInput!): [FoodSite!]!
+  foodGetSitesWithCursor(args: ConnectionArgs!): ListFoodSite!
+  foodGetPage0(id: String!): FoodPage0!
+  foodGetPage0BySlug(slug: String!, siteId: String!): FoodPage0!
+  foodGetPages0: [FoodPage0!]!
+  foodGetPages0ByParentId(parentId: String!): [FoodPage0!]!
+  foodGetPages0BySiteId(siteId: String!): [FoodPage0!]!
+  foodGetPages0ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage0!]!
+  foodGetPages0WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage0!
+  foodGetPage1(id: String!): FoodPage1!
+  foodGetPage1BySlug(slug: String!, siteId: String!): FoodPage1!
+  foodGetPages1: [FoodPage1!]!
+  foodGetPages1BySiteId(siteId: String!): [FoodPage1!]!
+  foodGetPages1ByParentId(parentId: String!): [FoodPage1!]!
+  foodGetPages1ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage1!]!
+  foodGetPages1WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage1!
+  foodGetPage2(id: String!): FoodPage2!
+  foodGetPage2BySlug(slug: String!, siteId: String!): FoodPage2!
+  foodGetPages2: [FoodPage2!]!
+  foodGetPages2ByParentId(parentId: String!): [FoodPage2!]!
+  foodGetPages2BySiteId(siteId: String!): [FoodPage2!]!
+  foodGetPages2ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage2!]!
+  foodGetPages2WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage2!
+  foodGetPage3(id: String!): FoodPage3!
+  foodGetPage3BySlug(slug: String!, siteId: String!): FoodPage3!
+  foodGetPages3: [FoodPage3!]!
+  foodGetPages3ByParentId(parentId: String!): [FoodPage3!]!
+  foodGetPages3BySiteId(siteId: String!): [FoodPage3!]!
+  foodGetPages3ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage3!]!
+  foodGetPages3WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage3!
+  foodGetPage4(id: String!): FoodPage4!
+  foodGetPage4BySlug(slug: String!, siteId: String!): FoodPage4!
+  foodGetPages4: [FoodPage4!]!
+  foodGetPages4ByParentId(parentId: String!): [FoodPage4!]!
+  foodGetPages4BySiteId(siteId: String!): [FoodPage4!]!
+  foodGetPages4ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage4!]!
+  foodGetPages4WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage4!
+  foodGetPage5(id: String!): FoodPage5!
+  foodGetPage5BySlug(slug: String!, siteId: String!): FoodPage5!
+  foodGetPages5: [FoodPage5!]!
+  foodGetPages5ByParentId(parentId: String!): [FoodPage5!]!
+  foodGetPages5BySiteId(siteId: String!): [FoodPage5!]!
+  foodGetPages5ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage5!]!
+  foodGetPages5WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage5!
+  foodGetPage6(id: String!): FoodPage6!
+  foodGetPage6BySlug(slug: String!, siteId: String!): FoodPage6!
+  foodGetPages6: [FoodPage6!]!
+  foodGetPages6ByParentId(parentId: String!): [FoodPage6!]!
+  foodGetPages6BySiteId(siteId: String!): [FoodPage6!]!
+  foodGetPages6ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage6!]!
+  foodGetPages6WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage6!
+  foodGetPage7(id: String!): FoodPage7!
+  foodGetPage7BySlug(slug: String!, siteId: String!): FoodPage7!
+  foodGetPages7: [FoodPage7!]!
+  foodGetPages7ByParentId(parentId: String!): [FoodPage7!]!
+  foodGetPages7BySiteId(siteId: String!): [FoodPage7!]!
+  foodGetPages7ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage7!]!
+  foodGetPages7WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage7!
+  foodGetPage8(id: String!): FoodPage8!
+  foodGetPage8BySlug(slug: String!, siteId: String!): FoodPage8!
+  foodGetPages8: [FoodPage8!]!
+  foodGetPages8ByParentId(parentId: String!): [FoodPage8!]!
+  foodGetPages8BySiteId(siteId: String!): [FoodPage8!]!
+  foodGetPages8ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage8!]!
+  foodGetPages8WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage8!
+  foodGetPage9(id: String!): FoodPage9!
+  foodGetPage9BySlug(slug: String!, siteId: String!): FoodPage9!
+  foodGetPages9: [FoodPage9!]!
+  foodGetPages9ByParentId(parentId: String!): [FoodPage9!]!
+  foodGetPages9BySiteId(siteId: String!): [FoodPage9!]!
+  foodGetPages9ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage9!]!
+  foodGetPages9WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage9!
+  foodGetPage10(id: String!): FoodPage10!
+  foodGetPage10BySlug(slug: String!, siteId: String!): FoodPage10!
+  foodGetPages10: [FoodPage10!]!
+  foodGetPages10ByParentId(parentId: String!): [FoodPage10!]!
+  foodGetPages10BySiteId(siteId: String!): [FoodPage10!]!
+  foodGetPages10ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage10!]!
+  foodGetPages10WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage10!
+  foodGetPage11(id: String!): FoodPage11!
+  foodGetPage11BySlug(slug: String!, siteId: String!): FoodPage11!
+  foodGetPages11: [FoodPage11!]!
+  foodGetPages11ByParentId(parentId: String!): [FoodPage11!]!
+  foodGetPages11BySiteId(siteId: String!): [FoodPage11!]!
+  foodGetPages11ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage11!]!
+  foodGetPages11WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage11!
+  foodGetPage12(id: String!): FoodPage12!
+  foodGetPage12BySlug(slug: String!, siteId: String!): FoodPage12!
+  foodGetPages12: [FoodPage12!]!
+  foodGetPages12ByParentId(parentId: String!): [FoodPage12!]!
+  foodGetPages12BySiteId(siteId: String!): [FoodPage12!]!
+  foodGetPages12ByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodPage12!]!
+  foodGetPages12WithCursor(args: ConnectionArgs!, parentId: String!): ListFoodPage12!
+  foodGetProduct(id: String!): FoodProduct!
+  foodGetProductBySlug(slug: String!, siteId: String!): FoodProduct!
+  foodGetProducts: [FoodProduct!]!
+  foodGetProductsBySiteId(siteId: String!): [FoodProduct!]!
+  foodGetProductsByParentId(parentId: String!): [FoodProduct!]!
+  foodGetProductsByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodProduct!]!
+  foodGetProductsWithCursor(args: ConnectionArgs!, parentId: String!): ListFoodProduct!
+  foodGetCommentsByParentId(parentId: String!): [FoodComment!]!
+  foodGetArticle(id: String!): FoodArticle!
+  foodGetArticleBySlug(siteId: String!, slug: String!): FoodArticle!
+  foodGetArticles: [FoodArticle!]!
+  foodGetArticlesByParentId(parentId: String!): [FoodArticle!]!
+  foodGetArticlesBySiteId(siteId: String!): [FoodArticle!]!
+  foodGetArticlesByParentIdByPagination(listInput: ListInput!, parentId: String!): [FoodArticle!]!
+  foodGetArticlesWithCursor(args: ConnectionArgs!, parentId: String!): ListFoodArticle!
+  foodGetUser(id: String!): FoodUser!
+  foodGetUserByEmail(email: String!, siteId: String!): FoodUser!
+  foodGetUsers: [FoodUser!]!
+}
+
+input ListInput {
+  """classical limit"""
+  limit: Float!
+
+  """classical offset"""
+  offset: Float!
 }
 
 input ConnectionArgs {
@@ -2359,6 +3052,119 @@ type Mutation {
   hardwareStoreDeleteArticles(ids: [String!]!): [String!]!
   hardwareStoreDeleteAllArticles: String!
   hardwareStoreCreateUser(input: CreateUser!): HardwareStoreUser!
+  foodCreateSite(input: CreateSite!): FoodSite!
+  foodUpdateSite(input: UpdateSite!): FoodSite!
+  foodUpdateDbSite(input: UpdateDB!): FoodSite!
+  foodUpdateAdminSite(input: UpdateAdminSite!): FoodSite!
+  foodUpdateImageSite(input: UpdateImage!): FoodSite!
+  foodDeleteSite(id: String!): String!
+  foodDeleteSites(ids: [String!]!): [String!]!
+  foodDeleteAllSites: String!
+  foodCreatePage0(input: CreatePage!): FoodPage0!
+  foodUpdatePage0(input: UpdatePage!): FoodPage0!
+  foodUpdateImagePage0(input: UpdateImage!): FoodPage0!
+  foodDeletePage0(id: String!): String!
+  foodDeletePages0(ids: [String!]!): [String!]!
+  foodDeleteAllPages0: String!
+  foodCreatePage1(input: CreatePage!): FoodPage1!
+  foodUpdatePage1(input: UpdatePage!): FoodPage1!
+  foodUpdateImagePage1(input: UpdateImage!): FoodPage1!
+  foodDeletePage1(id: String!): String!
+  foodDeletePages1(ids: [String!]!): [String!]!
+  foodDeleteAllPages1: String!
+  foodCreatePage2(input: CreatePage!): FoodPage2!
+  foodUpdatePage2(input: UpdatePage!): FoodPage2!
+  foodUpdateImagePage2(input: UpdateImage!): FoodPage2!
+  foodDeletePage2(id: String!): String!
+  foodDeletePages2(ids: [String!]!): [String!]!
+  foodDeleteAllPages2: String!
+  foodCreatePage3(input: CreatePage!): FoodPage3!
+  foodUpdatePage3(input: UpdatePage!): FoodPage3!
+  foodUpdateImagePage3(input: UpdateImage!): FoodPage3!
+  foodDeletePage3(id: String!): String!
+  foodDeletePages3(ids: [String!]!): [String!]!
+  foodDeleteAllPages3: String!
+  foodCreatePage4(input: CreatePage!): FoodPage4!
+  foodUpdatePage4(input: UpdatePage!): FoodPage4!
+  foodUpdateImagePage4(input: UpdateImage!): FoodPage4!
+  foodDeletePage4(id: String!): String!
+  foodDeletePages4(ids: [String!]!): [String!]!
+  foodDeleteAllPages4: String!
+  foodCreatePage5(input: CreatePage!): FoodPage5!
+  foodUpdatePage5(input: UpdatePage!): FoodPage5!
+  foodUpdateImagePage5(input: UpdateImage!): FoodPage5!
+  foodDeletePage5(id: String!): String!
+  foodDeletePages5(ids: [String!]!): [String!]!
+  foodDeleteAllPages5: String!
+  foodCreatePage6(input: CreatePage!): FoodPage6!
+  foodUpdatePage6(input: UpdatePage!): FoodPage6!
+  foodUpdateImagePage6(input: UpdateImage!): FoodPage6!
+  foodDeletePage6(id: String!): String!
+  foodDeletePages6(ids: [String!]!): [String!]!
+  foodDeleteAllPages6: String!
+  foodCreatePage7(input: CreatePage!): FoodPage7!
+  foodUpdatePage7(input: UpdatePage!): FoodPage7!
+  foodUpdateImagePage7(input: UpdateImage!): FoodPage7!
+  foodDeletePage7(id: String!): String!
+  foodDeletePages7(ids: [String!]!): [String!]!
+  foodDeleteAllPages7: String!
+  foodCreatePage8(input: CreatePage!): FoodPage8!
+  foodUpdatePage8(input: UpdatePage!): FoodPage8!
+  foodUpdateImagePage8(input: UpdateImage!): FoodPage8!
+  foodDeletePage8(id: String!): String!
+  foodDeletePages8(ids: [String!]!): [String!]!
+  foodDeleteAllPages8: String!
+  foodCreatePage9(input: CreatePage!): FoodPage9!
+  foodUpdatePage9(input: UpdatePage!): FoodPage9!
+  foodUpdateImagePage9(input: UpdateImage!): FoodPage9!
+  foodDeletePage9(id: String!): String!
+  foodDeletePages9(ids: [String!]!): [String!]!
+  foodDeleteAllPages9: String!
+  foodCreatePage10(input: CreatePage!): FoodPage10!
+  foodUpdatePage10(input: UpdatePage!): FoodPage10!
+  foodUpdateImagePage10(input: UpdateImage!): FoodPage10!
+  foodDeletePage10(id: String!): String!
+  foodDeletePages10(ids: [String!]!): [String!]!
+  foodDeleteAllPages10: String!
+  foodCreatePage11(input: CreatePage!): FoodPage11!
+  foodUpdatePage11(input: UpdatePage!): FoodPage11!
+  foodUpdateImagePage11(input: UpdateImage!): FoodPage11!
+  foodDeletePage11(id: String!): String!
+  foodDeletePages11(ids: [String!]!): [String!]!
+  foodDeleteAllPages11: String!
+  foodCreatePage12(input: CreatePage!): FoodPage12!
+  foodUpdatePage12(input: UpdatePage!): FoodPage12!
+  foodUpdateImagePage12(input: UpdateImage!): FoodPage12!
+  foodDeletePage12(id: String!): String!
+  foodDeletePages12(ids: [String!]!): [String!]!
+  foodDeleteAllPages12: String!
+  foodCreateProduct(input: CreateProduct!): FoodProduct!
+  foodUpdateProduct(input: UpdateProduct!): FoodProduct!
+  foodUpdateDetailProduct(input: UpdateDetailProduct!): FoodProduct!
+  foodUpdatePriceProduct(input: UpdatePriceProduct!): FoodProduct!
+  foodUpdateSpecsProduct(input: UpdateSpecsProduct!): FoodProduct!
+  foodUpdateTagsProduct(input: UpdateTagsProduct!): FoodProduct!
+  foodUpdateLikesProduct(input: UpdateLikesProduct!): FoodProduct!
+  foodUpdateDisLikesProduct(input: UpdateLikesProduct!): FoodProduct!
+  foodUpdateImageProduct(input: UpdateImageProduct!): FoodProduct!
+  foodDeleteProduct(id: String!): String!
+  foodDeleteProducts(ids: [String!]!): [String!]!
+  foodDeleteAllProducts: String!
+  foodCreateComment(input: CreateComment!): FoodComment!
+  foodUpdateComment(input: UpdateComment!): FoodComment!
+  foodUpdateLikesComment(input: UpdateLikesComment!): FoodComment!
+  foodUpdateDisLikesComment(input: UpdateLikesComment!): FoodComment!
+  foodCreateArticle(input: CreateArticle!): FoodArticle!
+  foodUpdateArticle(input: UpdateArticle!): FoodArticle!
+  foodUpdateContentArticle(input: UpdateContentArticle!): FoodArticle!
+  foodUpdateTagsArticle(input: UpdateTagsArticle!): FoodArticle!
+  foodUpdateLikesArticle(input: UpdateLikesArticle!): FoodArticle!
+  foodUpdateDisLikesArticle(input: UpdateLikesArticle!): FoodArticle!
+  foodUpdateImageArticle(input: UpdateImage!): FoodArticle!
+  foodDeleteArticle(id: String!): String!
+  foodDeleteArticles(ids: [String!]!): [String!]!
+  foodDeleteAllArticles: String!
+  foodCreateUser(input: CreateUser!): FoodUser!
 }
 
 input CreateSite {

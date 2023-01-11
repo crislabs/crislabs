@@ -28,6 +28,7 @@ import { Type } from 'src/common/entities/site.model';
 import { PortfolioArticle } from 'src/common/entities/article.model';
 import { PortfolioPage1Service } from '../services/page1.service';
 import { UseFilters } from '@nestjs/common';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 // import { PortfolioAdoptionService } from 'src/products/categories/portfolio/portfolio-adoption/category.service';
 // import { PortfolioProductService } from 'src/products/categories/portfolio/portfolio-product/category.service';
 // import { PortfolioArticleService } from 'src/articles/categories/portfolio/category.service';
@@ -116,6 +117,14 @@ export class PortfolioPage0Resolver {
     @Args('siteId') siteId: string,
   ) {
     return this.page0Service.findBySiteId(siteId);
+  }
+
+  @Query(() => [PortfolioPage0], { name: 'portfolioGetPages0ByParentIdByPagination' })
+  findPagesByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.page0Service.findByParentIdByPagination(listInput,parentId);
   }
 
   @Query(() => ListPortfolioPage0, { name: 'portfolioGetPages0WithCursor' })

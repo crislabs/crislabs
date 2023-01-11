@@ -129,6 +129,10 @@ export class Type {
   export class MarketingSite extends Site {}
   @ObjectType()
   export class FoodSite extends Site {}
+
+  @ObjectType()
+  export class ListFoodSite extends RelayTypes<FoodSite>(FoodSite) {}
+
   @ObjectType()
   export class WearSite extends Site {}
   @ObjectType()

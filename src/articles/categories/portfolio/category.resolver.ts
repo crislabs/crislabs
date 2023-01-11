@@ -12,6 +12,7 @@ import {
 import { UpdateImage } from 'src/common/dto/site.input';
 import { ListPortfolioArticle, PortfolioArticle } from 'src/common/entities/article.model';
 import { PortfolioComment } from 'src/common/entities/comment.model';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 import ConnectionArgs, {
   getPagingParameters,
 } from 'src/common/pagination/relay/connection.args';
@@ -96,6 +97,15 @@ export class PortfolioArticleResolver {
   getArticlesBySiteId(@Args('siteId') siteId: string) {
     return this.portfolioService.findBySiteId(siteId);
   }
+
+  @Query(() => [PortfolioArticle], { name: 'portfolioGetArticlesByParentIdByPagination' })
+  findArticlesByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.portfolioService.findByParentIdByPagination(listInput,parentId);
+  }
+
 
   @Query(() => ListPortfolioArticle, { name: 'portfolioGetArticlesWithCursorByParentId' })
   async findAllWithCursor(

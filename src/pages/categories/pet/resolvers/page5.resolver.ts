@@ -24,6 +24,7 @@ import { PetProduct } from 'src/common/entities/product.model';
 import { Type } from 'src/common/entities/site.model';
 import { PetProductService } from 'src/products/categories/pet/pet-product/category.service';
 import { PetPage6Service } from '../services/page6.service';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 // import { PetProductService } from 'src/products/categories/pet/pet-product/category.service';
 
 @Resolver(() => PetPage5)
@@ -102,6 +103,15 @@ export class PetPage5Resolver {
   ) {
     return this.page5Service.findBySiteId(siteId);
   }
+
+  @Query(() => [PetPage5], { name: 'petGetPages5ByParentIdByPagination' })
+  findPagesByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.page5Service.findByParentIdByPagination(listInput,parentId);
+  }
+
 
   @Query(() => ListPetPage5, { name: 'petGetPages5WithCursor' })
   async findAllWithCursor(

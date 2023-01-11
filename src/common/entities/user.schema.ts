@@ -15,6 +15,7 @@ export class UserDocument extends AbstractDocument {
 
 }
 // export const UserSchema = SchemaFactory.createForClass(UserDocument);
+export const FoodUserSchema = SchemaFactory.createForClass(UserDocument);
 export const PetUserSchema = SchemaFactory.createForClass(UserDocument);
 export const PortfolioUserSchema = SchemaFactory.createForClass(UserDocument);
 export const HardwareStoreUserSchema = SchemaFactory.createForClass(UserDocument);

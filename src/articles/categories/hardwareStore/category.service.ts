@@ -178,6 +178,11 @@ export class HardwareStoreArticleService {
     return document;
   }
 
+  findByParentIdByPagination(paginationQuery: ListInput, parentId: string) {
+    const { limit, offset } = paginationQuery;
+    return this.articleModel.find({ parentId: parentId }).sort({ 'dataArticle.updateDate.lastUpdatedAt': -1 }).skip(offset).limit(limit).exec();
+  }
+
   async findByCursor(paginationQuery: ListInput, parentId: string) {
     const { limit, offset } = paginationQuery;
     const count = await this.articleModel.count({ parentId: parentId });

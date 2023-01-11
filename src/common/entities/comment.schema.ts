@@ -11,6 +11,7 @@ export class CommentDocument extends AbstractDocument {
   @Prop({ trim: true })
   siteId: string;
 }
+export const FoodCommentSchema = SchemaFactory.createForClass(CommentDocument);
 export const PetCommentSchema = SchemaFactory.createForClass(CommentDocument);
 export const PortfolioCommentSchema = SchemaFactory.createForClass(CommentDocument);
 export const HardwareStoreCommentSchema = SchemaFactory.createForClass(CommentDocument);

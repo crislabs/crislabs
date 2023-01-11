@@ -24,6 +24,7 @@ import { UpdateImage } from 'src/common/dto/site.input';
 import { Type } from 'src/common/entities/site.model';
 // import { PortfolioProductService } from 'src/products/categories/portfolio/portfolio-product/category.service';
 import { PortfolioPage12Service } from '../services/page12.service';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 // import { PortfolioProductService } from 'src/products/categories/portfolio/portfolio-product/category.service';
 
 @Resolver(() => PortfolioPage11)
@@ -101,6 +102,14 @@ export class PortfolioPage11Resolver {
     @Args('siteId') siteId: string,
   ) {
     return this.page11Service.findBySiteId(siteId);
+  }
+
+  @Query(() => [PortfolioPage11], { name: 'portfolioGetPages11ByParentIdByPagination' })
+  findPagesByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.page11Service.findByParentIdByPagination(listInput,parentId);
   }
 
   @Query(() => ListPortfolioPage11, { name: 'portfolioGetPages11WithCursor' })

@@ -32,6 +32,7 @@ import { PortfolioArticle } from 'src/common/entities/article.model';
 import { PortfolioPage0Service } from 'src/pages/categories/portfolio/services/page0.service';
 import { PortfolioUserService } from 'src/users/categories/portfolio/category.service';
 import { PortfolioArticleService } from 'src/articles/categories/portfolio/category.service';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 
 @Resolver(() => PortfolioSite)
 export class PortfolioSiteResolver {
@@ -97,6 +98,13 @@ export class PortfolioSiteResolver {
   @Query(() => [PortfolioSite], { name: 'portfolioGetSites' })
   findAll() {
     return this.siteService.findAll();
+  }
+
+  @Query(() => [PortfolioSite], { name: 'portafolioGetSitesByPagination' })
+  findByParentIdByPagination(
+    @Args('listInput') listInput: ListInput
+  ) {
+    return this.siteService.findByParentIdByPagination(listInput);
   }
 
   @Query(() => ListPortfolioSite, { name: 'portfolioGetSitesWithCursor' })

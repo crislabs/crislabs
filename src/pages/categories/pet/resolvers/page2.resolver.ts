@@ -24,6 +24,7 @@ import { PetProduct } from 'src/common/entities/product.model';
 import { Type } from 'src/common/entities/site.model';
 import { PetProductService } from 'src/products/categories/pet/pet-product/category.service';
 import { PetPage3Service } from '../services/page3.service';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 // import { PetProductService } from 'src/products/categories/pet/pet-product/category.service';
 
 @Resolver(() => PetPage2)
@@ -101,6 +102,14 @@ export class PetPage2Resolver {
     @Args('siteId') siteId: string,
   ) {
     return this.page2Service.findBySiteId(siteId);
+  }
+
+  @Query(() => [PetPage2], { name: 'petGetPages2ByParentIdByPagination' })
+  findPagesByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.page2Service.findByParentIdByPagination(listInput,parentId);
   }
 
 

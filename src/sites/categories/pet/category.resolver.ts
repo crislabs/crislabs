@@ -29,6 +29,7 @@ import { PetArticleService } from 'src/articles/categories/pet/category.service'
 import { PetUser } from 'src/common/entities/user.model';
 import { PetAdoption, PetProduct } from 'src/common/entities/product.model';
 import { PetArticle } from 'src/common/entities/article.model';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 
 @Resolver(() => PetSite)
 export class PetSiteResolver {
@@ -94,6 +95,13 @@ export class PetSiteResolver {
   @Query(() => [PetSite], { name: 'petGetSites' })
   findAll() {
     return this.siteService.findAll();
+  }
+
+  @Query(() => [PetSite], { name: 'petGetSitesByPagination' })
+  findByParentIdByPagination(
+    @Args('listInput') listInput: ListInput
+  ) {
+    return this.siteService.findByParentIdByPagination(listInput);
   }
 
   @Query(() => ListPetSite, { name: 'petGetSitesWithCursor' })

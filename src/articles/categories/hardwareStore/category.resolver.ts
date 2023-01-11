@@ -11,6 +11,7 @@ import {
 import { UpdateImage } from 'src/common/dto/site.input';
 import { ListHardwareStoreArticle, HardwareStoreArticle } from 'src/common/entities/article.model';
 import { HardwareStoreComment } from 'src/common/entities/comment.model';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 import ConnectionArgs, {
   getPagingParameters,
 } from 'src/common/pagination/relay/connection.args';
@@ -93,6 +94,14 @@ export class HardwareStoreArticleResolver {
   @Query(() => [HardwareStoreArticle], { name: 'hardwareStoreGetArticlesBySiteId' })
   getArticlesBySiteId(@Args('siteId') siteId: string) {
     return this.hardwareStoreService.findBySiteId(siteId);
+  }
+
+  @Query(() => [HardwareStoreArticle], { name: 'hardwareStoreGetArticlesByParentIdByPagination' })
+  findArticlesByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.hardwareStoreService.findByParentIdByPagination(listInput,parentId);
   }
 
   @Query(() => ListHardwareStoreArticle, { name: 'hardwareStoreGetArticlesWithCursor' })

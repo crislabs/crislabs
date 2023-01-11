@@ -44,6 +44,16 @@ import { MongooseModule } from '@nestjs/mongoose';
       }),
       inject: [ConfigService],
     }),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      connectionName: 'foodDB',
+      useFactory: async (configService: ConfigService) => ({
+        uri: configService.get<string>('DATABASE_URL_FOOD'),
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      }),
+      inject: [ConfigService],
+    }),
     
   ],
 })

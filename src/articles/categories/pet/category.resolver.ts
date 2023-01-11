@@ -11,6 +11,7 @@ import {
 import { UpdateImage } from 'src/common/dto/site.input';
 import { ListPetArticle, PetArticle } from 'src/common/entities/article.model';
 import { PetComment } from 'src/common/entities/comment.model';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 import ConnectionArgs, {
   getPagingParameters,
 } from 'src/common/pagination/relay/connection.args';
@@ -93,6 +94,14 @@ export class PetArticleResolver {
   @Query(() => [PetArticle], { name: 'petGetArticlesBySiteId' })
   getArticlesBySiteId(@Args('siteId') siteId: string) {
     return this.petService.findBySiteId(siteId);
+  }
+
+  @Query(() => [PetArticle], { name: 'petGetArticlesByParentIdByPagination' })
+  findArticlesByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.petService.findByParentIdByPagination(listInput,parentId);
   }
 
   @Query(() => ListPetArticle, { name: 'petGetArticlesWithCursor' })

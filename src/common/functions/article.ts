@@ -19,7 +19,7 @@ export function articleCreated({
     dataArticle: {
       author: uid,
       seoArticle: {
-        title: capitalizar(title),
+        title: title,
         href: slug(title),
         description: description,
       },
@@ -41,7 +41,7 @@ export function articleCreated({
 export function articleUpdated({ id, title, description, uid }: UpdateArticle) {
   return {
     $set: {
-      'dataArticle.seoArticle.title': capitalizar(title),
+      'dataArticle.seoArticle.title': title,
       'dataArticle.seoArticle.href': slug(title),
       'dataArticle.seoArticle.description': description,
       'dataArticle.updateDate.lastUpdatedAt': new Date(),

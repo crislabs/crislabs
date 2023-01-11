@@ -46,6 +46,10 @@ export class PetArticle extends Article {}
 @ObjectType()
 export class ListPetArticle extends RelayTypes<PetArticle>(PetArticle) {}
 @ObjectType()
+export class FoodArticle extends Article {}
+@ObjectType()
+export class ListFoodArticle extends RelayTypes<FoodArticle>(FoodArticle) {}
+@ObjectType()
 export class PortfolioArticle extends Article {}
 @ObjectType()
 export class ListPortfolioArticle extends RelayTypes<PortfolioArticle>(PortfolioArticle) {}

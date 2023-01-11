@@ -22,6 +22,7 @@ import { UpdateImage } from 'src/common/dto/site.input';
 import { PetProduct } from 'src/common/entities/product.model';
 import { Type } from 'src/common/entities/site.model';
 import { PetProductService } from 'src/products/categories/pet/pet-product/category.service';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 // import { PetProductService } from 'src/products/categories/pet/pet-product/category.service';
 
 @Resolver(() => PetPage12)
@@ -93,6 +94,15 @@ export class PetPage12Resolver {
   ) {
     return this.page12Service.findBySiteId(siteId);
   }
+
+  @Query(() => [PetPage12], { name: 'petGetPages12ByParentIdByPagination' })
+  findPagesByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.page12Service.findByParentIdByPagination(listInput,parentId);
+  }
+
 
   @Query(() => ListPetPage12, { name: 'petGetPages12WithCursor' })
   async findAllWithCursor(

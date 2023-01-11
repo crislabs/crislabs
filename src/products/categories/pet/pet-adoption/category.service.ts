@@ -187,6 +187,11 @@ export class PetAdoptionService {
     return document;
   }
 
+  findByParentIdByPagination(paginationQuery: ListInput, parentId: string) {
+    const { limit, offset } = paginationQuery;
+    return this.adoptionModel.find({ parentId: parentId }).sort({ 'dataProduct.updateDate.lastUpdatedAt': -1 }).skip(offset).limit(limit).exec();
+  }
+
   async findByCursor(paginationQuery: ListInput, parentId: string) {
     const { limit, offset } = paginationQuery;
     const count = await this.adoptionModel.count({ parentId: parentId });

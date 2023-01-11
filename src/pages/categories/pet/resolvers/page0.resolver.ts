@@ -31,6 +31,7 @@ import { UseFilters } from '@nestjs/common';
 import { PetAdoptionService } from 'src/products/categories/pet/pet-adoption/category.service';
 import { PetProductService } from 'src/products/categories/pet/pet-product/category.service';
 import { PetArticleService } from 'src/articles/categories/pet/category.service';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 // import { HttpExceptionFilter } from 'src/common/aspects/http-exception.filter';
 
 @Resolver(() => PetPage0)
@@ -118,6 +119,14 @@ export class PetPage0Resolver {
     @Args('siteId') siteId: string,
   ) {
     return this.page0Service.findBySiteId(siteId);
+  }
+
+  @Query(() => [PetPage0], { name: 'petGetPages0ByParentIdByPagination' })
+  findPagesByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.page0Service.findByParentIdByPagination(listInput,parentId);
   }
 
   @Query(() => ListPetPage0, { name: 'petGetPages0WithCursor' })

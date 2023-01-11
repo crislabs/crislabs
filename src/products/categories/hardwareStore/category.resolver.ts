@@ -13,6 +13,7 @@ import {
 import { UpdateImageProduct } from 'src/common/dto/site.input';
 import { HardwareStoreComment } from 'src/common/entities/comment.model';
 import { ListHardwareStoreProduct, HardwareStoreProduct } from 'src/common/entities/product.model';
+import { ListInput } from 'src/common/pagination/dto/list.input';
 import ConnectionArgs, {
   getPagingParameters,
 } from 'src/common/pagination/relay/connection.args';
@@ -109,6 +110,13 @@ export class HardwareStoreProductResolver {
     return this.productService.findByParentId(parentId);
   }
 
+  @Query(() => [HardwareStoreProduct], { name: 'hardwareStoreGetProductsByParentIdByPagination' })
+  findByParentIdByPagination(
+    @Args('listInput') listInput: ListInput,
+    @Args('parentId') parentId: string,
+  ) {
+    return this.productService.findByParentIdByPagination(listInput,parentId);
+  }
 
   @Query(() => ListHardwareStoreProduct, { name: 'hardwareStoreGetProductsWithCursor' })
   async findAllWithCursor(

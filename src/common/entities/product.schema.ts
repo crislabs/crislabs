@@ -39,3 +39,4 @@ export const HardwareStoreProductSchema = SchemaFactory.createForClass(ProductDo
 
 export const PetProductSchema = SchemaFactory.createForClass(ProductDocument);
 export const PetAdoptionSchema = SchemaFactory.createForClass(ProductDocument);
+export const FoodProductSchema = SchemaFactory.createForClass(ProductDocument);

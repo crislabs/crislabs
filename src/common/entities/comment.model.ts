@@ -41,6 +41,10 @@ export class DataComment {
 // @ObjectType()
 // export class MarketingArticle extends Article {}
 @ObjectType()
+export class FoodComment extends Comment {}
+@ObjectType()
+export class ListFoodComment extends RelayTypes<FoodComment>(FoodComment) {}
+@ObjectType()
 export class PetComment extends Comment {}
 @ObjectType()
 export class ListPetComment extends RelayTypes<PetComment>(PetComment) {}
